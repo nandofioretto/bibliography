@@ -276,6 +276,28 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 
 
+## Data Release for Continous Observations
+
+- [TODO:] DP and Check continuous observation papers (Dwork, Comode, ...)
+
+-Gradual Release of Sensitive Data under Differential Privacy
+	[[Paper]](http://repository.cmu.edu/cgi/viewcontent.cgi?article=1145&context=jpc)
+	
+	_Fragkiskos Koufogiannis, Shuo Han, George J. Pappas (Journal of Privacy and Confidentiality 2016_
+
+   >_We introduce the problem of releasing private data under differential privacy when the privacy level is subject to change over time. Existing work assumes that privacy level is determined by the system designer as a fixed value before private data is released. For certain applications, however, users may wish to relax the privacy level for subsequent releases of the same data after either a re-evaluation of the privacy concerns or the need for better accuracy. Specifically, given a database containing private data, we assume that a response y1 that preserves \epsilon1-differential privacy has already been published. Then, the privacy level is relaxed to \epsilon2, with \epsilon2 > \epsilon1, and we wish to publish a more accurate response y2 while the joint response (y1, y2) preserves \epsilon2-differential privacy. How much accuracy is lost in the scenario of gradually releasing two responses y1 and y2 compared to the scenario of releasing a single response that is \epsilon2-differentially private? Our results consider the more general case with multiple privacy level relaxations and show that there exists a composite mechanism that achieves no loss in accuracy. 
+   We consider the case in which the private data lies within R^n with an adjacency relation induced by the L1-norm, and we initially focus on mechanisms that approximate identity queries. We show that the same accuracy can be achieved in the case of gradual release through a mechanism whose outputs can be described by a lazy Markov stochastic process. This stochastic process has a closed form expression and can be efficiently sampled. Moreover, our results extend beyond identity queries to a more general family of privacy-preserving mechanisms. To this end, we demonstrate the applicability of our tool to multiple scenarios including Google’s project RAPPOR, trading of private data, and controlled transmission of private data in a social network. Finally, we derive similar results for the approximated differential privacy._
+ 
+
+- Local Differential Privacy for Evolving Data
+	[[Paper]](https://arxiv.org/pdf/1802.07128.pdf)
+
+	_Matthew Joseph, Aaron Roth, Jonathan Ullman, Bo Waggoner (2018)_
+
+	>_There are now several large scale deployments of differential privacy used to track statistical information about users. However, these systems periodically recollect the data and recompute the statistics using algorithms designed for a single use and as a result do not provide meaningful privacy guarantees over long time scales. Moreover, existing techniques to mitigate this effect do not apply in the “local” model of differential privacy that these systems use.
+	In this paper, we introduce a new local differential privacy technique to maintain persistently up-to-date statistics over time, with privacy guarantees scaling only with the number of changes in the underlying distribution rather than the number of collection periods. The key ideas include batching time into epochs—varying the epoch size allows us to trade off accuracy against frequency of updates—and a protocol for users to “vote” to update out-of-date statistics while losing very little privacy. We prove our main results for the setting where users hold a single bit, redrawn at every time period, from a common (but changing) distribution; however, our framework is quite general and we give an application to frequency and heavy-hitter estimation._
+
+
 ## Theory
 
 ### Approximate Differential Privacy

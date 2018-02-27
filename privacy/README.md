@@ -3,129 +3,242 @@
 This repo serves the purpose of organizing papers on Differential Privacy
 
 
-## Books and Seminal Work
+## Content
+- [Books and Seminal Work](#sec:books)
 
-### <a name="Dwork:08"></a>
+- [Differential Privacy Mechanisms for General Queries](#sec:dp_mechanisms)
+	+ [Basic Mechanisms](#sec:basic_mechanisms)
+	+ [Hierarchical Mechanisms](#sec:hierarchical_mechanisms)
+	+ [Binning Mechanisms](#sec:binning_mechanisms)
+	+ [Dimensionality Reduction Mechanisms]($sec:dimensionality_reduction_mechanisms)
+
+- [Differential Privacy Mechanisms for Continous Observations](#sec:continous_observations)
+
+- [Machine Learning](#sec:machine_learning)
+	+ [Regression](#sec:regression)
+	+ [Decision Trees](#sec:decision_trees)
+	+ [Generative Adversarial Networks](#sec:GANs)
+	+ [Adversarial Learning](#sec:adversarial_learning) 
+
+<!-- Differential Privacy Books and Seminal Papers -->
+
+## Books and Seminal Work 
+<a name='sec:books'></a>
+
+<a name="Dwork:08"></a>
 - Differential Privacy: A Survey of Results	
 	[[Paper]](http://web.cs.ucdavis.edu/~franklin/ecs289/2010/dwork_2008.pdf)
 	[[BibTex]](https://scholar.googleusercontent.com/scholar.bib?q=info:2XFT4-OFmBUJ:scholar.google.com/&output=citation&scisig=AAGBfm0AAAAAWoXkON19s9zJUA_b-2leazRirIVXtzYl&scisf=4&ct=citation&cd=-1&hl=en "BibTex")
 
 	_Cynthia Dwork (TAMC 2008)_
 
-### <a name="Dwork:11"></a>
+<a name="Dwork:11"></a>
 - A firm foundation for private data analysis 
 	[[Paper]](https://www.microsoft.com/en-us/research/wp-content/uploads/2011/01/dwork_cacm.pdf)
 	[[BibTex]](https://scholar.googleusercontent.com/scholar.bib?q=info:M9zjB3R503gJ:scholar.google.com/&output=citation&scisig=AAGBfm0AAAAAWoXku7RjvNTGU5I5kb703DzRuU58nkfD&scisf=4&ct=citation&cd=-1&hl=en "BibTex")
   
 	_Cynthia Dwork (Communications of the ACM 2011)_
 
-### <a name="Dwork:14"></a>
+<a name="Dwork:14"></a>
 - The Algorithmic Foundations of Differential Privacy
 	[[Paper]](https://www.cis.upenn.edu/~aaroth/Papers/privacybook.pdf)
 	[[BibTex]](https://scholar.googleusercontent.com/scholar.bib?q=info:U2_JsgxAEdQJ:scholar.google.com/&output=citation&scisig=AAGBfm0AAAAAWoXj3gdueEXahzojphGMX7JkBK4HsxHw&scisf=4&ct=citation&cd=-1&hl=en "BibTex")
   
 	_Cynthia Dwork, Aaron Roth (2014)_
 
-### <a name="Vadhan:17"></a>
+<a name="Vadhan:17"></a>
 - The Complexity of Differential Privacy
 	[[Paper]](https://privacytools.seas.harvard.edu/files/privacytools/files/complexityprivacy_1.pdf)
 	[[BibTex]](https://scholar.googleusercontent.com/scholar.bib?q=info:VX4mKQQcywsJ:scholar.google.com/&output=citation&scisig=AAGBfm0AAAAAWoXjSjtKBoZDmIFXBncjls-eZe8ucNSD&scisf=4&ct=citation&cd=-1&hl=en "BibTex")
 
 	_Salil Vadhan (Tutorials on the Foundations of Cryptography 2017)_
 
-### <a name="Nissim:17"></a>
+<a name="Nissim:17"></a>
 - Differential Privacy: A Primer for a Non-technical Audience
 	[[Paper]](http://privacytools.seas.harvard.edu/files/privacytools/files/pedagogical-document-dp_0.pdf)
 	[[BibTex]](https://scholar.googleusercontent.com/scholar.bib?q=info:NZhnwWKU4iUJ:scholar.google.com/&output=citation&scisig=AAGBfm0AAAAAWoXlHkKEsK7olQ-Inlh9V5hI9HHNnYbF&scisf=4&ct=citation&cd=-1&hl=en "BibTex")
   
 	_Kobbi Nissim†, Thomas Steinke, Alexandra Wood, Mark Bun, Marco Gaboardi,David R. O’Brien, and Salil Vadhan (2017)_
   
-  
+
+
+<!-- Differential Privacy Mechanisms -->
 
 ## Differential Privacy Mechanisms for General Queries
+<a name='sec:dp_mechanisms'></a>
+
+
+<!-- Basic Mechanisms -->
 
 ### Basic Mechanisms
+<a name='sec:basic_mechanisms'></a>
 
-### <a name="Dwork:06b"></a>
+<a name="Dwork:06b"></a>
 - Calibrating Noise to Sensitivity in Private Data Analysis
 	[[Paper]](http://people.csail.mit.edu/asmith/PS/sensitivity-tcc-final.pdf)
 
 	_Cynthia Dwork, Frank McSherry, Kobbi Nissim, Adam Smith (TCC 2006)_
 
-    >[Notes]: The *Laplace Mechanism*.
+    >[Comments]: The *Laplace Mechanism*.
 
-	>_We continue a line of research initiated in [10,11]on privacy-preserving statistical databases. Consider a trusted server that holds a database of sensitive information. Given a query function f mapping databases to reals, the so-called true answer is the result of applying f to the database. To protect privacy, the true answer is perturbed by the addition of random noise generated according to a carefully chosen distribution, and this response, the true answer plus noise, is returned to the user._
-	>_Previous work focused on the case of noisy sums, in which f = ∑ig(xi), where xi denotes the ith row of the database and g maps database rows to [0,1]. We extend the study to general functions f, proving that privacy can be preserved by calibrating the standard deviation of the noise according to the sensitivity of the function f. Roughly speaking, this is the amount that any single argument to f can change its output. The new analysis shows that for several particular applications substantially less noise is needed than was previously understood to be the case._
-	>_The first step is a very clean characterization of privacy in terms of indistinguishability of transcripts. Additionally, we obtain separation results showing the increased value of interactive sanitization mechanisms over non-interactive._
+	>_We continue a line of research initiated in [10,11]on privacy-preserving statistical databases. Consider a trusted server that holds a database of sensitive information. Given a query function f mapping databases to reals, the so-called true answer is the result of applying f to the database. To protect privacy, the true answer is perturbed by the addition of random noise generated according to a carefully chosen distribution, and this response, the true answer plus noise, is returned to the user.
+	Previous work focused on the case of noisy sums, in which f = ∑ig(xi), where xi deComments the ith row of the database and g maps database rows to [0,1]. We extend the study to general functions f, proving that privacy can be preserved by calibrating the standard deviation of the noise according to the sensitivity of the function f. Roughly speaking, this is the amount that any single argument to f can change its output. The new analysis shows that for several particular applications substantially less noise is needed than was previously understood to be the case.
+	The first step is a very clean characterization of privacy in terms of indistinguishability of transcripts. Additionally, we obtain separation results showing the increased value of interactive sanitization mechanisms over non-interactive._
 
-### <a name="Inusaha:06"></a>
+<a name="Inusaha:06"></a>
 - A discrete analogue of the Laplace distribution.
 	[[Paper]](https://www.sciencedirect.com/science/article/pii/S0378375804003519)
 
 	_Seidu Inusaha, Tomasz J.Kozubowski (Journal of Statistical Planning and Inference 2006)_
 
-	> [Notes]: The paper introduces the discrete Laplace distribution.
+	> [Comments]: The paper introduces the discrete Laplace distribution.
 
 	>_Following Kemp (J. Statist. Plann. Inference 63 (1997) 223) who defined a discrete analogue of the normal distribution, we derive a discrete version of the Laplace (double exponential) distribution. In contrast with the discrete normal case, here closed-form expressions are available for the probability density function, the distribution function, the characteristic function, the mean, and the variance. We show that this discrete distribution on integers shares many properties of the classical Laplace distribution on the real line, including unimodality, infinite divisibility, closure properties with respect to geometric compounding, and a maximum entropy property. We also discuss statistical issues of estimation under the discrete Laplace model._
 
-### <a name"McSherry:07"></a>
+<a name"McSherry:07"></a>
 - Mechasim Design via Differential Privacy
 	[[Paper]](https://www.microsoft.com/en-us/research/wp-content/uploads/2016/02/mdviadp.pdf)
 
 	_F. McSherry, K. Talwar (FOCS 2007)_
 
-	>[Notes]: The *Exponential Mechanism*.
+	>[Comments]: The *Exponential Mechanism*.
 
 	>_We study the role that privacy-preserving algorithms, which prevent the leakage of speciﬁc information about participants, can play in the design of mechanisms for strategic agents, which must encourage players to honestly report information. Speciﬁcally, we show that the recent notion of differential privacy [15, 14], in addition to its own intrinsic virtue, can ensure that participants have limited effect on the outcome of the mechanism, and as a consequence have limited incentive to lie. More precisely, mechanisms with differential privacy are approximate dominant strategy under arbitrary player utility functions, are automatically resilient to coalitions, and easily allow repeatability. We study several special cases of the unlimited supply auction problem, providing new results for digital goods auctions, attribute auctions, and auctions with arbitrary structural constraints on the prices. As an important prelude to developing a privacy-preserving auction mechanism, we introduce and study a generalization of previous privacy work that accommodates the high sensitivity of the auction setting, where a single participant may dramatically alter the optimal ﬁxed price, and a slight change in the offered price may take the revenue from optimal to zero._
 
-
-### <a name="hardt:10"></a>
+<a name="hardt:10"></a>
 - A Multiplicative Weights Mechanism for Privacy-Preserving Data Analysis
 	[[Paper]](http://ieeexplore.ieee.org/document/5670948/)
 
 	_Moritz Hardt, Guy N. Rothblum (FOCS 2010)_
 
-	> [Notes]: The paper introduces the *Multiplicative Weights* (MW) Mechanism. It explits the composition theorem to answer queries interactively, by casting the query release problem as an online _learning problem_.
+	> [Comments]: The paper introduces the *Multiplicative Weights* (MW) Mechanism. It explits the composition theorem to answer queries interactively, by casting the query release problem as an online _learning problem_.
 
 	>_We consider statistical data analysis in the interactive setting. In this setting a trusted curator maintains a database of sensitive information about individual participants, and releases privacy-preserving answers to queries as they arrive. Our primary contribution is a new differentially private multiplicative weights mechanism for answering a large number of interactive counting (or linear) queries that arrive online and may be adaptively chosen. This is the first mechanism with worst-case accuracy guarantees that can answer large numbers of interactive queries and is efficient (in terms of the runtime's dependence on the data universe size). The error is asymptotically optimal in its dependence on the number of participants, and depends only logarithmically on the number of queries being answered. The running time is nearly linear in the size of the data universe. As a further contribution, when we relax the utility requirement and require accuracy only for databases drawn from a rich class of databases, we obtain exponential improvements in running time. Even in this relaxed setting we continue to guarantee privacy for any input database. Only the utility requirement is relaxed. Specifically, we show that when the input database is drawn from a smooth distribution — a distribution that does not place too much weight on any single data item — accuracy remains as above, and the running time becomes poly-logarithmic in the data universe size. The main technical contributions are the application of multiplicative weights techniques to the differential privacy setting, a new privacy analysis for the interactive setting, and a technique for reducing data dimensionality for databases drawn from smooth distributions._
 
-
-### <a name="Hardt:12"></a>
+<a name="Hardt:12"></a>
 - A Simple and Practical Algorithm for Differentially Private Data Release
 	[[Paper]](http://mrtz.org/papers/mwem.pdf)
 
 	_Moritz Hardt, Katrina Ligett, Frank McSherry (NIPS 2012)_
 
-	>[Notes]: The *MWEM Mechanism*.
+	>[Comments]: The *MWEM Mechanism*.
+	> It is a data independent mechanism.
 
 	>_We present a new algorithm for differentially private data release, based on a simple combination of the Exponential Mechanism with the Multiplicative Weights update rule. Our MWEM algorithm achieves what are the best known and nearly optimal theoretical guarantees, while at the same time being simple to implement and experimentally more accurate on actual data sets than existing techniques._
 
 
+<!-- Differential Privacy Mechanisms -->
+
+## Differential Privacy Mechanisms for Continous Observations
+<a name='sec:continous_observations'></a>
 
 
-### Hierarchical (todo)
+- [TODO:] DP and Check continuous observation papers (Dwork, Comode, ...)
 
-- H2 (Data independent)
-- Hb (Data independent)
+<a name="Koufogiannis:16"></a>
+- Gradual Release of Sensitive Data under Differential Privacy
+	[[Paper]](http://repository.cmu.edu/cgi/viewcontent.cgi?article=1145&context=jpc)
+	
+	_Fragkiskos Koufogiannis, Shuo Han, George J. Pappas (Journal of Privacy and Confidentiality 2016_
+
+    >_We introduce the problem of releasing private data under differential privacy when the privacy level is subject to change over time. Existing work assumes that privacy level is determined by the system designer as a fixed value before private data is released. For certain applications, however, users may wish to relax the privacy level for subsequent releases of the same data after either a re-evaluation of the privacy concerns or the need for better accuracy. Specifically, given a database containing private data, we assume that a response y1 that preserves \epsilon1-differential privacy has already been published. Then, the privacy level is relaxed to \epsilon2, with \epsilon2 > \epsilon1, and we wish to publish a more accurate response y2 while the joint response (y1, y2) preserves \epsilon2-differential privacy. How much accuracy is lost in the scenario of gradually releasing two responses y1 and y2 compared to the scenario of releasing a single response that is \epsilon2-differentially private? Our results consider the more general case with multiple privacy level relaxations and show that there exists a composite mechanism that achieves no loss in accuracy._
+    >_We consider the case in which the private data lies within R^n with an adjacency relation induced by the L1-norm, and we initially focus on mechanisms that approximate identity queries. We show that the same accuracy can be achieved in the case of gradual release through a mechanism whose outputs can be described by a lazy Markov stochastic process. This stochastic process has a closed form expression and can be efficiently sampled. Moreover, our results extend beyond identity queries to a more general family of privacy-preserving mechanisms. To this end, we demonstrate the applicability of our tool to multiple scenarios including Google’s project RAPPOR, trading of private data, and controlled transmission of private data in a social network. Finally, we derive similar results for the approximated differential privacy._
+ 
+
+<a name="Joseph:18"></a>
+- Local Differential Privacy for Evolving Data
+	[[Paper]](https://arxiv.org/pdf/1802.07128.pdf)
+
+	_Matthew Joseph, Aaron Roth, Jonathan Ullman, Bo Waggoner (2018)_
+    
+    >_There are now several large scale deployments of differential privacy used to track statistical information about users. However, these systems periodically recollect the data and recompute the statistics using algorithms designed for a single use and as a result do not provide meaningful privacy guarantees over long time scales. Moreover, existing techniques to mitigate this effect do not apply in the “local” model of differential privacy that these systems use. In this paper, we introduce a new local differential privacy technique to maintain persistently up-to-date statistics over time, with privacy guarantees scaling only with the number of changes in the underlying distribution rather than the number of collection periods. The key ideas include batching time into epochs—varying the epoch size allows us to trade off accuracy against frequency of updates—and a protocol for users to “vote” to update out-of-date statistics while losing very little privacy. We prove our main results for the setting where users hold a single bit, redrawn at every time period, from a common (but changing) distribution; however, our framework is quite general and we give an application to frequency and heavy-hitter estimation._
+
+
+<!-- Hierarchical Mechanisms -->
+
+### Hierarchical Methods
+<a name='sec:hierarchical_mechanisms'></a>
+
+<a name='Hay:10'></a>
+- Boosting the Accuracy of Differentially-Private Histograms Through Consistency
+	[[Paper]](http://www.vldb.org/pvldb/vldb2010/papers/R91.pdf)
+	
+	_Michael Hay, Vibhor Rastogi, Gerome Miklau, Dan Suciu (VLDB 2010)_
+
+	>[Comments]: The *H2 Mechanism*.
+	<br>
+	>[Category]: Hierarchical, data-independent mechanism.
+
+	>_We show that it is possible to significantly improve the accuracy of a general class of histogram queries while satisfying differential privacy. Our approach carefully chooses a set of queries to evaluate, and then exploits consistency constraints that should hold over the noisy output. In a post-processing phase, we compute the consistent input most likely to have produced the noisy output. The final output is differentially-private and consistent, but in addition, it is often much more accurate. We show, both theoretically and experimentally, that these techniques can be used for estimating the degree sequence of a graph very precisely, and for computing a histogram that can support arbitrary range queries accurately._
+
+<a name='Li:10'></a>
+- Optimizing Histogram Queries under Differential Privacy
+	[[Paper]](https://people.cs.umass.edu/~mcgregor/papers/10-pods.pdf)
+
+	_Chao Li, Michael Hay, Vibhor Rastogi, Gerome Miklau, Andrew McGregor (PODS 2010)_
+
+	>[Comments]: The *Greedy H Mechanism*.
+	> It is a data independent mechanism.
+	<br>
+	>[Category]: Hierarchical, data-independent mechanism.
+
+	>_Differential privacy is a robust privacy standard that has been successfully applied to a range of data analysis tasks. But despite much recent work, optimal strategies for answering a collection of related queries are not known.
+	We propose the matrix mechanism, a new algorithm for answering a workload of predicate counting queries. Given a workload, the mechanism requests answers to a different set of queries, called a query strategy, which are answered using the standard Laplace mechanism. Noisy answers to the workload queries are then derived from the noisy answers to the strategy queries. This two stage process can result in a more complex correlated noise distribution that preserves differential privacy but increases accuracy.
+	We provide a formal analysis of the error of query answers produced by the mechanism and investigate the problem of computing the optimal query strategy in support of a given workload. We show this problem can be formulated as a rank-constrained semidefinite program. Finally, we analyze two seemingly distinct techniques, whose similar behavior is explained by viewing them as instances of the matrix mechanism._
+
+<a name='Qardaji:13'></a>
+- Optimizing linear counting queries under differential privacy
+	[[Paper]](http://www.vldb.org/pvldb/vol6/p1954-qardaji.pdf)
+
+	_Wahbeh Qardaji, Weining Yang, Ninghui Li (VLDB 2013)_
+
+	>[Comments]: The *Hb Mechanism*.
+	<br>
+	>[Category]: Hierarchical, data-independent mechanism.
+
+	>_In recent years, many approaches to differentially privately publish histograms have been proposed. Several approaches rely on constructing tree structures in order to decrease the error when answer large range queries. In this paper, we examine the factors affecting the accuracy of hierarchical approaches by studying the mean squared error (MSE) when answering range queries. We start with one-dimensional histograms, and analyze how the MSE changes with different branching factors, after employing constrained inference, and with different methods to allocate the privacy budget among hierarchy levels. Our analysis and experimental results show that combining the choice of a good branching factor with constrained inference outperform the current state of the art. Finally, we extend our analysis to multi-dimensional histograms. We show that the benefits from employing hierarchical methods beyond a single dimension are significantly diminished, and when there are 3 or more dimensions, it is almost always better to use the Flat method instead of a hierarchy._
+
+<a name='Li:15'></a>
+- The matrix mechanism: optimizing linear counting queries under differential privacy
+	[[Paper]](http://cs.colgate.edu/~mhay/pdfs/li2015optimizing.pdf)
+
+	_Chao Li, Gerome Miklau, Michael Hay, Andrew McGregor, Vibhor Rastogi (VLDB Journal 2015)_
+
+	>[Comments]: The *Matrix Mechanism*. It generalizes several mechanisms able to answer linear counting queries.
+	<br>
+	>[Category]: Data-independent mechanism.
+
+	>_Differential privacy is a robust privacy standard that has been successfully applied to a range of data analysis tasks. We describe the matrix mechanism, an algorithm for answering a workload of linear counting queries that adapts the noise distribution to properties of the provided queries. Given a workload, the mechanism uses a different set of queries, called a query strategy, which are answered using a standard Laplace or Gaussian mechanism. Noisy answers to the workload queries are then derived from the noisy answers to the strategy queries. This two-stage process can result in a more complex, correlated noise distribution that preserves differential privacy but increases accuracy. We provide a formal analysis of the error of query answers produced by the mechanism and investigate the problem of computing the optimal query strategy in support of a given workload. We show that this problem can be formulated as a rank-constrained semidefinite program. We analyze two seemingly distinct techniques proposed in the literature, whose similar behavior is explained by viewing them as instances of the matrix mechanism. We also describe an extension of the mechanism in which nonnegativity constraints are included in the derivation process and provide experimental evidence of its efficacy._
+
 
 - DPCube (data dependent)
 - QuadTree (data dependent)
 - UGrid, AGrid (data dependent)
 
 
+<!-- Binning Mechanisms -->
+
 ### Binning Strategies  (todo)
+<a name='sec:binning_mechanisms'></a>
+
 - AHP (data dependent)
 - DAWA (data dependent)
 
 
+<!-- Dimensionality-Reduction Mechanisms -->
+
 ### Dimensionality reduction  (todo)
+<a name='sec:dimensionality_reduction_mechanisms'></a>
 
 - Privelet (data independent)
 - PHP (data dependent)
 
 
 
+<!-- Differentially Private Machine Learning Algorithms -->
+
 ## Machine Learning
+<a name='sec:machine_learning'></a>
 
 - Differential Privacy and Machine Learning: a Survey and Review
 	[[Paper]](https://arxiv.org/pdf/1412.7584.pdf)
@@ -135,6 +248,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 
 ### Regression
+<a name='sec:regression'></a>
 
 - Differential Privacy and Robust Statistics
 	[[Paper]](http://www.stat.cmu.edu/~jinglei/dl09.pdf)
@@ -142,13 +256,11 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 	_Cynthia Dwork, Jing Lei (STOC 2009)_
 
-
 - Privacy-preserving logistic regression
 	[[Paper]](https://papers.nips.cc/paper/3486-privacy-preserving-logistic-regression.pdf)
 	[[BibTex]](https://scholar.googleusercontent.com/scholar.bib?q=info:jTZmFlLL6rcJ:scholar.google.com/&output=citation&scisig=AAGBfm0AAAAAWoXEipuHdAjGeBLUhDtaWHX2b0sMAfkW&scisf=4&ct=citation&cd=-1&hl=en "BibTex")
   
 	_Kamalika Chaudhuri, Claire Monteleoni (NIPS 2009)_
-
 
 - Private Convex Empirical Risk Minimization and High-dimensional Regression
 	[[Paper]](http://proceedings.mlr.press/v23/kifer12/kifer12.pdf)
@@ -156,13 +268,11 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 	_Daniel Kifer, Adam Smith, Abhradeep Thakurta (JMLR 2012)_
 
-
 - Revisiting Differentially Private Regression: Lessons From Learning Theory and their Consequences
 	[[Paper]](https://arxiv.org/pdf/1512.06388.pdf) 
 	[[BibTex]](https://scholar.googleusercontent.com/scholar.bib?q=info:qnLQEzVhaW8J:scholar.google.com/&output=citation&scisig=AAGBfm0AAAAAWoXCmeTCRw-khVZFPdjqutebHTh4jhPM&scisf=4&ct=citation&cd=-1&hl=en "BibTex")
 
 	_Xi Wu, Matthew Fredrikson, Wentao Wu, Somesh Jha, Jeffrey F. Naughton (2015)_
-  
   
 - Functional Mechanism: Regression Analysis under Differential Privacy
 	[[Paper]](http://vldb.org/pvldb/vol5/p1364_junzhang_vldb2012.pdf)
@@ -172,6 +282,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 
 ### Decision Trees
+<a name='sec:decision_trees'></a>
 
 - A Practical Differentially Private Random Decision Tree Classifier
 	[[Paper]](http://www.tdp.cat/issues11/tdp.a082a11.pdf)
@@ -179,13 +290,11 @@ This repo serves the purpose of organizing papers on Differential Privacy
   
 	_Geetha Jagannathan, Krishnan Pillaipakkamnatt, Rebecca N Wright (ICDMW 2009)_
 
-
 - Data mining with differential privacy
 	[[Paper]](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.799.7017&rep=rep1&type=pdf)
 	[[BibTex]](https://scholar.googleusercontent.com/scholar.bib?q=info:6W2IOf41ouYJ:scholar.google.com/&output=citation&scisig=AAGBfm0AAAAAWoXepl_IBmJDpOMR9xTHMmICyfzrOqlC&scisf=4&ct=citation&cd=-1&hl=en "BibTex")
 
 	_Arik Friedman and Assaf Schuster (KDD 2010)_
-
 
 - Differentially Private Data Release for Data Mining
 	[[Paper]](http://www.cs.umanitoba.ca/~noman/Papers/MCFY11kdd.pdf)
@@ -199,13 +308,11 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 	_Geetha Jagannathan, Krishnan Pillaipakkamnatt, Rebecca N. Wright (Trans. Data Privacy 2012)_
 
-
 - Differentially Private Random Forest with High Utility
 	[[Paper]](http://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=7373418)
 	[[BibTex]](https://scholar.googleusercontent.com/scholar.bib?q=info:aMfsr4-D2MwJ:scholar.google.com/&output=citation&scisig=AAGBfm0AAAAAWoXiSxj9pQ1nN8BljGMc0bnwD1BM0lPO&scisf=4&ct=citation&cd=-1&hl=en "BibTex")
 
 	_Santu Rana, Sunil Kumar Gupta, Svetha Venkatesh (ICDM 2015)_
-
 
 - Differentially- and non-differentially-private random decision trees
 	[[Paper]](https://arxiv.org/pdf/1410.6973.pdf)
@@ -213,20 +320,17 @@ This repo serves the purpose of organizing papers on Differential Privacy
   
 	_Mariusz Bojarski, Anna Choromanska, KrzysztofChoromanski, Yann LeCun (2015)_
 
-
 - A Differentially Private Decision Forest
 	[[Paper]](http://crpit.com/confpapers/CRPITV168Fletcher.pdf)
 	[[BibTex]](https://scholar.googleusercontent.com/scholar.bib?q=info:gmYaqpu52GsJ:scholar.google.com/&output=citation&scisig=AAGBfm0AAAAAWoXchi23QyOFjXwLcAUDqMvX1x8TnbQ-&scisf=4&ct=citation&cd=-1&hl=en "BibTex")
 
 	_Sam Fletcher, Md Zahidul Islam (AusDM 2015)_
 
-
 - Decision Tree Classification with Differential Privacy: A Survey
 	[[Paper]](https://arxiv.org/pdf/1611.01919.pdf)
 	[[BibTex]](https://scholar.googleusercontent.com/scholar.bib?q=info:k9Cxb-VK_hAJ:scholar.google.com/&output=citation&scisig=AAGBfm0AAAAAWoXMWXEm-6uDX-fv3Uq_upoW-UzYYqSC&scisf=4&ct=citation&cd=-1&hl=en "BibTex")
   
 	_San Fletcher, Charles Sturt (2017)_
-
 
 - Differentially Private Random Decision Forests using Smooth Sensitivity
 	[[Paper]](https://arxiv.org/pdf/1606.03572.pdf)
@@ -236,6 +340,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 
 ### Generative Adversarial Models
+<a name='sec:GANs'></a>
 
 - Context-Aware Generative Adversarial Privacy
 	[[Paper]](https://arxiv.org/pdf/1710.09549.pdf)
@@ -244,14 +349,12 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	
     >_Preserving the utility of published datasets while simultaneously providing provable privacy guarantees is a well-known challenge. On the one hand, context-free privacy solutions, such as differential privacy, provide strong privacy guarantees, but often lead to a significant reduction in utility. On the other hand, context-aware privacy solutions, such as information theoretic privacy, achieve an improved privacy-utility tradeoff, but assume that the data holder has access to dataset statistics. We circumvent these limitations by introducing a novel context-aware privacy framework called generative adversarial privacy (GAP). GAP leverages recent advancements in generative adversarial networks (GANs) to allow the data holder to learn privatization schemes from the dataset itself. Under GAP, learning the privacy mechanism is formulated as a constrained minimax game between two players: a privatizer that sanitizes the dataset in a way that limits the risk of inference attacks on the individuals' private variables, and an adversary that tries to infer the private variables from the sanitized dataset. To evaluate GAP's performance, we investigate two simple (yet canonical) statistical dataset models: (a) the binary data model, and (b) the binary Gaussian mixture model. For both models, we derive game-theoretically optimal minimax privacy mechanisms, and show that the privacy mechanisms learned from data (in a generative adversarial fashion) match the theoretically optimal ones. This demonstrates that our framework can be easily applied in practice, even in the absence of dataset statistics._
 
-
 - Differentially Private Generative Adversarial Network
 	[[Paper]](https://arxiv.org/pdf/1802.06739.pdf)
 
 	_L Xie, K Lin, S Wang, F Wang, J Zhou (arXiv-2018)_
 
   	>_Generative Adversarial Network (GAN) and its variants have recently attracted intensive research interests due to their elegant theoretical foundation and excellent empirical performance as generative models. These tools provide a promising direction in the studies where data availability is limited. One common issue in GANs is that the density of the learned generative distribution could concentrate on the training data points, meaning that they can easily remember training samples due to the high model complexity of deep networks. This becomes a major concern when GANs are applied to private or sensitive data such as patient medical records, and the concentration of distribution may divulge critical patient information. To address this issue, in this paper we propose a di erentially private GAN (DPGAN) model, in which we achieve di erential privacy in GANs by adding carefully designed noise to gradients during the learning procedure. We provide rigorous proof for the privacy guarantee, as well as comprehensive empirical evidence to support our analysis, where we demonstrate that our method can generate high quality data points at a reasonable privacy level._
-
 
 - Generating Differentially Private Datasets Using GANs
 	[[Paper]](https://openreview.net/forum?id=rJv4XWZA-&noteId=BynjVJaSG)
@@ -261,9 +364,8 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	>Note: This is a rejected paper from ICLR 2018
 
 
-
 ### Adversarial Learning
-### <a name="adversarial_learning"></a>
+<a name='sec:adversarial_learning'></a>
 
 - On the Connection between Differential Privacy and Adversarial Robustness in Machine Learning
 	[[Paper]](https://arxiv.org/pdf/1802.03471.pdf)
@@ -274,36 +376,22 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 
 
-## Data Release for Continous Observations
 
-
-- [TODO:] DP and Check continuous observation papers (Dwork, Comode, ...)
-
-### <a name="Koufogiannis:16"></a>
-- Gradual Release of Sensitive Data under Differential Privacy
-	[[Paper]](http://repository.cmu.edu/cgi/viewcontent.cgi?article=1145&context=jpc)
-	
-	_Fragkiskos Koufogiannis, Shuo Han, George J. Pappas (Journal of Privacy and Confidentiality 2016_
-
-    >_We introduce the problem of releasing private data under differential privacy when the privacy level is subject to change over time. Existing work assumes that privacy level is determined by the system designer as a fixed value before private data is released. For certain applications, however, users may wish to relax the privacy level for subsequent releases of the same data after either a re-evaluation of the privacy concerns or the need for better accuracy. Specifically, given a database containing private data, we assume that a response y1 that preserves \epsilon1-differential privacy has already been published. Then, the privacy level is relaxed to \epsilon2, with \epsilon2 > \epsilon1, and we wish to publish a more accurate response y2 while the joint response (y1, y2) preserves \epsilon2-differential privacy. How much accuracy is lost in the scenario of gradually releasing two responses y1 and y2 compared to the scenario of releasing a single response that is \epsilon2-differentially private? Our results consider the more general case with multiple privacy level relaxations and show that there exists a composite mechanism that achieves no loss in accuracy._
-    >_We consider the case in which the private data lies within R^n with an adjacency relation induced by the L1-norm, and we initially focus on mechanisms that approximate identity queries. We show that the same accuracy can be achieved in the case of gradual release through a mechanism whose outputs can be described by a lazy Markov stochastic process. This stochastic process has a closed form expression and can be efficiently sampled. Moreover, our results extend beyond identity queries to a more general family of privacy-preserving mechanisms. To this end, we demonstrate the applicability of our tool to multiple scenarios including Google’s project RAPPOR, trading of private data, and controlled transmission of private data in a social network. Finally, we derive similar results for the approximated differential privacy._
- 
-### <a name="Joseph:18"></a>
-- Local Differential Privacy for Evolving Data
-	[[Paper]](https://arxiv.org/pdf/1802.07128.pdf)
-
-	_Matthew Joseph, Aaron Roth, Jonathan Ullman, Bo Waggoner (2018)_
-    
-    >_There are now several large scale deployments of differential privacy used to track statistical information about users. However, these systems periodically recollect the data and recompute the statistics using algorithms designed for a single use and as a result do not provide meaningful privacy guarantees over long time scales. Moreover, existing techniques to mitigate this effect do not apply in the “local” model of differential privacy that these systems use. In this paper, we introduce a new local differential privacy technique to maintain persistently up-to-date statistics over time, with privacy guarantees scaling only with the number of changes in the underlying distribution rather than the number of collection periods. The key ideas include batching time into epochs—varying the epoch size allows us to trade off accuracy against frequency of updates—and a protocol for users to “vote” to update out-of-date statistics while losing very little privacy. We prove our main results for the setting where users hold a single bit, redrawn at every time period, from a common (but changing) distribution; however, our framework is quite general and we give an application to frequency and heavy-hitter estimation._
 
 
 ## Theory
 
+
 ### Approximate Differential Privacy
-### <a name="approximate_dp"></a>
+<a name="approximate_dp"></a>
 
 
-### <a name="Bun:14"></a>
+### Local Differential Privacy
+<a name="local_dp"></a>
+
+
+
+<a name="Bun:14"></a>
 - Fingerprinting Codes and the Price of Approximate Differential Privacy
 	[[Paper]](https://arxiv.org/abs/1311.3158)
 

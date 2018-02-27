@@ -4,26 +4,26 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 
 ## Content
-- [Books and Seminal Work](#sec:books)
+- [Books and Seminal Work](#_books)
 
-- [Differential Privacy Mechanisms for General Queries](#sec:dp_mechanisms)
-	+ [Basic Mechanisms](#sec:basic_mechanisms)
-	+ [Hierarchical Mechanisms](#sec:hierarchical_mechanisms)
-	+ [Binning Mechanisms](#sec:binning_mechanisms)
-	+ [Dimensionality Reduction Mechanisms]($sec:dimensionality_reduction_mechanisms)
+- [Differential Privacy Mechanisms for General Queries](#_dp_mechanisms)
+	+ [Basic Mechanisms](#_basic_mechanisms)
+	+ [Hierarchical Mechanisms](#_hierarchical_mechanisms)
+	+ [Binning Mechanisms](#_binning_mechanisms)
+	+ [Dimensionality Reduction Mechanisms]($_dimensionality_reduction_mechanisms)
 
-- [Differential Privacy Mechanisms for Continous Observations](#sec:continous_observations)
+- [Differential Privacy Mechanisms for Continous Observations](#_continous_observations)
 
-- [Machine Learning](#sec:machine_learning)
-	+ [Regression](#sec:regression)
-	+ [Decision Trees](#sec:decision_trees)
-	+ [Generative Adversarial Networks](#sec:GANs)
-	+ [Adversarial Learning](#sec:adversarial_learning) 
+- [Machine Learning](#_machine_learning)
+	+ [Regression](#_regression)
+	+ [Decision Trees](#_decision_trees)
+	+ [Generative Adversarial Networks](#_generative_adversarial_models)
+	+ [Adversarial Learning](#_adversarial_learning) 
 
 <!-- Differential Privacy Books and Seminal Papers -->
 
 ## Books and Seminal Work 
-<a name='sec:books'></a>
+<a name='_books'></a>
 
 <a name="Dwork:08"></a>
 - Differential Privacy: A Survey of Results	
@@ -65,13 +65,13 @@ This repo serves the purpose of organizing papers on Differential Privacy
 <!-- Differential Privacy Mechanisms -->
 
 ## Differential Privacy Mechanisms for General Queries
-<a name='sec:dp_mechanisms'></a>
+<a name='_dp_mechanisms'></a>
 
 
 <!-- Basic Mechanisms -->
 
 ### Basic Mechanisms
-<a name='sec:basic_mechanisms'></a>
+<a name='_basic_mechanisms'></a>
 
 <a name="Dwork:06b"></a>
 - Calibrating Noise to Sensitivity in Private Data Analysis
@@ -130,7 +130,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 <!-- Differential Privacy Mechanisms -->
 
 ## Differential Privacy Mechanisms for Continous Observations
-<a name='sec:continous_observations'></a>
+<a name='_continous_observations'></a>
 
 
 - [TODO:] DP and Check continuous observation papers (Dwork, Comode, ...)
@@ -157,7 +157,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 <!-- Hierarchical Mechanisms -->
 
 ### Hierarchical Methods
-<a name='sec:hierarchical_mechanisms'></a>
+<a name='_hierarchical_mechanisms'></a>
 
 <a name='Hay:10'></a>
 - Boosting the Accuracy of Differentially-Private Histograms Through Consistency
@@ -219,7 +219,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 <!-- Binning Mechanisms -->
 
 ### Binning Strategies  (todo)
-<a name='sec:binning_mechanisms'></a>
+<a name='_binning_mechanisms'></a>
 
 - AHP (data dependent)
 - DAWA (data dependent)
@@ -228,7 +228,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 <!-- Dimensionality-Reduction Mechanisms -->
 
 ### Dimensionality reduction  (todo)
-<a name='sec:dimensionality_reduction_mechanisms'></a>
+<a name='_dimensionality_reduction_mechanisms'></a>
 
 - Privelet (data independent)
 - PHP (data dependent)
@@ -238,7 +238,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 <!-- Differentially Private Machine Learning Algorithms -->
 
 ## Machine Learning
-<a name='sec:machine_learning'></a>
+<a name='_machine_learning'></a>
 
 - Differential Privacy and Machine Learning: a Survey and Review
 	[[Paper]](https://arxiv.org/pdf/1412.7584.pdf)
@@ -248,7 +248,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 
 ### Regression
-<a name='sec:regression'></a>
+<a name='_regression'></a>
 
 - Differential Privacy and Robust Statistics
 	[[Paper]](http://www.stat.cmu.edu/~jinglei/dl09.pdf)
@@ -282,7 +282,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 
 ### Decision Trees
-<a name='sec:decision_trees'></a>
+<a name='_decision_trees'></a>
 
 - A Practical Differentially Private Random Decision Tree Classifier
 	[[Paper]](http://www.tdp.cat/issues11/tdp.a082a11.pdf)
@@ -340,7 +340,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 
 ### Generative Adversarial Models
-<a name='sec:GANs'></a>
+<a name='_generative_adversarial_models'></a>
 
 - Context-Aware Generative Adversarial Privacy
 	[[Paper]](https://arxiv.org/pdf/1710.09549.pdf)
@@ -365,7 +365,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 
 ### Adversarial Learning
-<a name='sec:adversarial_learning'></a>
+<a name='_adversarial_learning'></a>
 
 - On the Connection between Differential Privacy and Adversarial Robustness in Machine Learning
 	[[Paper]](https://arxiv.org/pdf/1802.03471.pdf)

@@ -20,6 +20,8 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	+ [Generative Adversarial Networks](#_generative_adversarial_models)
 	+ [Adversarial Learning](#_adversarial_learning) 
 
+- [Distributed Differential Privacy](#_distributed_dp)
+
 <!-- Differential Privacy Books and Seminal Papers -->
 
 ## Books and Seminal Work 
@@ -153,6 +155,14 @@ This repo serves the purpose of organizing papers on Differential Privacy
     
     >_There are now several large scale deployments of differential privacy used to track statistical information about users. However, these systems periodically recollect the data and recompute the statistics using algorithms designed for a single use and as a result do not provide meaningful privacy guarantees over long time scales. Moreover, existing techniques to mitigate this effect do not apply in the “local” model of differential privacy that these systems use. In this paper, we introduce a new local differential privacy technique to maintain persistently up-to-date statistics over time, with privacy guarantees scaling only with the number of changes in the underlying distribution rather than the number of collection periods. The key ideas include batching time into epochs—varying the epoch size allows us to trade off accuracy against frequency of updates—and a protocol for users to “vote” to update out-of-date statistics while losing very little privacy. We prove our main results for the setting where users hold a single bit, redrawn at every time period, from a common (but changing) distribution; however, our framework is quite general and we give an application to frequency and heavy-hitter estimation._
 
+
+### Other Resources
+#### Slides
+	-[] [[Privacy of Dynamic Data: Continual Observation and Pan Privacy - Moni Naor]](https://www.microsoft.com/en-us/research/wp-content/uploads/2010/01/Naor_Privacy_and_Trust_RFS_71210.pdf)
+
+
+#### Videos
+	- [[Privacy of Dynamic Data: Continual Observation and Pan Privacy - Moni Naor]](https://www.youtube.com/watch?v=KU3AAYEWNR0)
 
 <!-- Hierarchical Mechanisms -->
 
@@ -376,10 +386,19 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 
 
+## Distributed Differential Privacy
+<a name='_distributed_dp'></a>
+
+- Our Data, Ourselves: Privacy via Distributed Noise Generation
+	<a name='Dwork:2006b'></a>
+	[[Paper]](https://www.iacr.org/archive/eurocrypt2006/40040493/40040493.pdf)
+
+	_Cynthia Dwork, Krishnaram Kenthapadi, Frank McSherry, Ilya Mironov, Moni Naor (Eurocrypt 2006)_
+
+	>_. In this work we provide efficient distributed protocols for generating shares of random noise, secure against malicious participants. The purpose of the noise generation is to create a distributed implementation of the privacy-preserving statistical databases described in recent papers [14, 4, 13]. In these databases, privacy is obtained by perturbing the true answer to a database query by the addition of a small amount of Gaussian or exponentially distributed random noise. The computational power of even a simple form of these databases, when the query is just of the form \Sum_i f(di), that is, the sum over all rows i in the database of a function f applied to the data in row i, has been demonstrated in [4]. A distributed implementation eliminates the need for a trusted database administrator. The results for noise generation are of independent interest. The generation of Gaussian noise introduces a technique for distributing shares of many unbiased coins with fewer executions of verifiable secret sharing than would be needed using previous approaches (reduced by a factor of n). The generation of exponentially distributed noise uses two shallow circuits: one for generating many arbitrarily but identically biased coins at an amortized cost of two unbiased random bits apiece, independent of the bias, and the other to combine bits of appropriate biases to obtain an exponential distribution._
 
 
-
-## Theory
+## Differential Privacy Model Extensions
 
 
 ### Approximate Differential Privacy
@@ -389,6 +408,17 @@ This repo serves the purpose of organizing papers on Differential Privacy
 ### Local Differential Privacy
 <a name="local_dp"></a>
 
+
+### Pan Privacy
+<a name='pan_privacy'></a>
+
+- Pan-Private Streaming Algorithms
+	<a name='Dwork:09'></a>
+	[[Paper]](https://www.cs.toronto.edu/~toni/Papers/panprivacy.pdf)
+
+	_Cynthia Dwork, Moni Naor, Toniann Pitassi, Guy N. Rothblum, Sergey Yekhanin ()_
+
+	>_Collectors of confidential data, such as governmental agencies, hospitals, or search engine providers, can be pressured to permit data to be used for purposes other than that for which they were collected. To support the data curators, we initiate a study of pan-private algorithms; roughly speaking, these algorithms retain their privacy properties even if their internal state becomes visible to an adversary. Our principal focus is on streaming algorithms, where each datum may be discarded immediately after processing._
 
 
 <a name="Bun:14"></a>

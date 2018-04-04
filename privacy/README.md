@@ -8,6 +8,8 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 - [Books and Seminal Work](#_books)
 
+- [Theory](#_theory_)
+
 - [Mechanisms for Answering General Queries](#_dp_mechanisms)
 	+ [Basic Mechanisms](#_basic_mechanisms)
 	+ [Hierarchical Mechanisms](#_hierarchical_mechanisms)
@@ -34,6 +36,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	+ [Local Differential Privacy](#_local_dp)
 	+ [Pan Privacy](#_pan_privacy)
 	+ [Reni Differential Privacy](#)
+	+ [Random Differential Privacy](#)
 
 
 <!-- Differential Privacy Books and Seminal Papers -->
@@ -74,6 +77,70 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	_Kobbi Nissim†, Thomas Steinke, Alexandra Wood, Mark Bun, Marco Gaboardi,David R. O’Brien, and Salil Vadhan (2017)_
 
 
+<!-- Differential Privacy Theory and useful results -->
+
+## Theory
+<a name='_theory_'></a>
+
+[Jump to Top](#_content)
+
+### Composition Theorems
+
+- Our data, ourselves: Privacy via distributed noise generation	[Jump to link](#Dwork:06b)
+
+    >[Comments]: Basic Composition.
+
+- Calibrating Noise to Sensitivity in Private Data Analysis [Jump to link](#Dwork:06a)
+
+    >[Comments]: Basic Composition.
+
+- Boosting and differential privacy. 
+	<a name="Dwork:10a"></a>
+	[[Paper]](https://guyrothblum.files.wordpress.com/2014/11/drv10.pdf)
+
+	_Cynthia Dwork, Guy N. Rothblum, Salil P. Vadhan (FOCS 2010)_
+
+    >[Comments]: Advanced composition with Boosting
+
+	>_Boosting is a general method for improving the accuracy of learning algorithms. We use boosting to construct privacy-preserving synopses of the input database. These are data structures that yield, for a given set Q of queries over an input database, reasonably accurate estimates of the responses to every query in Q. Given a base synopsis generator that takes a distribution on Q and produces a “weak” synopsis that yields “good” answers for a majority of the weight in Q, our Boosting for Queries algorithm obtains a synopsis that is good for all of Q. We ensure privacy for the rows of the database, but the boosting is performed on the queries. 
+	We provide the first base synopsis generator for sets of arbitrary low-sensitivity queries, i.e., queries whose answers do not vary much under the addition or deletion of a single row. 
+	Boosting is an iterative method. In our Boosting for Queries algorithm, each iteration incurs a certain privacy loss. In analyzing the cumulative privacy loss over many iterations, we obtain a bound on the expected privacy loss from a single ε-differentially private mechanism. Combining this with evolution of confidence arguments from the literature, we get a fresh perspective – and stronger bounds – on the expected cumulative privacy loss due to multiple mechanisms, each of which provides ε-differential privacy or one of its relaxations, and each of which operates on (potentially) different, adaptively chosen, databases.
+	We can also view a database as a training set in a learning algorithm, where each row corresponds to an element in the training set. Given the power and prevalence of boosting, it is natural to search for boosting techniques that preserve the privacy properties of the base learner. We present a differentially private boosting technique, in which privacy comes at little additional cost in accuracy. We call this Boosting for People, since database rows corresponding to individual people are the elements of interest._
+
+- The composition theorem for differential privacy 
+	<a name="Kairouz:15"></a>
+	[[Paper]](http://proceedings.mlr.press/v37/kairouz15.pdf)
+
+	_Peter Kairouz, Sewoong Oh, and Pramod Viswanath (ICML 2015)_ 
+
+    >[Comments]: The advanced composition theorem.
+
+	>_Sequential querying of differentially private mechanisms degrades the overall privacy level. In this paper, we answer the fundamental question of characterizing the level of overall privacy degradation as a function of the number of queries and the privacy levels maintained by each privatization mechanism. Our solution is complete: we prove an upper bound on the overall privacy level and construct a sequence of privatization mechanisms that achieves this bound. The key innovation is the introduction of an operational interpretation of differential privacy (involving hypothesis testing) and the use of new data processing inequalities. Our result improves over the state-of-the-art and has immediate applications to several problems studied in the literature._
+
+- The complexity of computing the optimal composition of differential privacy
+	<a name="Murtagh:16"></a>
+	[[Paper]](https://arxiv.org/abs/1507.03113)
+
+	_Jack Murtagh, Salil P. Vadhan (TCC 2016)_
+    >[Comments]: The advanced composition theorem.
+
+    >[Comments]: The optimal composition theorem.
+
+	>_In the study of differential privacy, composition theorems (starting with the original paper of Dwork, McSherry, Nissim, and Smith (TCC'06)) bound the degradation of privacy when composing several differentially private algorithms. Kairouz, Oh, and Viswanath (ICML'15) showed how to compute the optimal bound for composing k arbitrary (ϵ,δ)-differentially private algorithms. We characterize the optimal composition for the more general case of k arbitrary (ϵ1,δ1),…,(ϵk,δk)-differentially private algorithms where the privacy parameters may differ for each algorithm in the composition. We show that computing the optimal composition in general is #P-complete. Since computing optimal composition exactly is infeasible (unless FP=#P), we give an approximation algorithm that computes the composition to arbitrary accuracy in polynomial time. The algorithm is a modification of Dyer's dynamic programming approach to approximately counting solutions to knapsack problems (STOC'03)._
+
+### Sampling
+
+- What can we learn privately?
+	<a name="Kasiviswanathan:11"></a>
+	[[Paper]](https://arxiv.org/abs/0803.0924)
+
+	_Shiva Prasad Kasiviswanathan, Homin K. Lee, Kobbi Nissim, Sofya Raskhodnikova, Adam Smith (SIAM J. Comput 2011)_
+
+	>_Learning problems form an important category of computational tasks that generalizes many of the computations researchers apply to large real-life data sets. We ask: what concept classes can be learned privately, namely, by an algorithm whose output does not depend too heavily on any one input or specific training example? More precisely, we investigate learning algorithms that satisfy differential privacy, a notion that provides strong confidentiality guarantees in contexts where aggregate information is released about a database containing sensitive information about individuals. We demonstrate that, ignoring computational constraints, it is possible to privately agnostically learn any concept class using a sample size approximately logarithmic in the cardinality of the concept class. Therefore, almost anything learnable is learnable privately: specifically, if a concept class is learnable by a (non-private) algorithm with polynomial sample complexity and output size, then it can be learned privately using a polynomial number of samples. We also present a computationally efficient private PAC learner for the class of parity functions. Local (or randomized response) algorithms are a practical class of private algorithms that have received extensive investigation. We provide a precise characterization of local private learning algorithms. We show that a concept class is learnable by a local algorithm if and only if it is learnable in the statistical query (SQ) model. Finally, we present a separation between the power of interactive and noninteractive local learning algorithms._
+
+#### Links and Resources 
+- [Secrecy of the sample post](https://adamdsmith.wordpress.com/2009/09/02/sample-secrecy/)
+
 <!-- Differential Privacy Mechanisms -->
 
 ## Mechanisms for Answering General Queries
@@ -89,7 +156,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 [Jump to Top](#_content)
 
 - Calibrating Noise to Sensitivity in Private Data Analysis
-	<a name="Dwork:06b"></a>
+	<a name="Dwork:06a"></a>
 	[[Paper]](http://people.csail.mit.edu/asmith/PS/sensitivity-tcc-final.pdf)
 
 	_Cynthia Dwork, Frank McSherry, Kobbi Nissim, Adam Smith (TCC 2006)_
@@ -294,6 +361,15 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	<br>
 	We describe several different kinds of attacks, all feasible in PINQ and some in Airavat. We discuss the space of possible countermeasures, and we present a detailed design for one specific solution, based on a new primitive we call predictable transactions and a simple differentially private programming language. Our evaluation, which relies on a proof-of-conceptimplementation based on the Caml Light runtime, shows that our design is effective against remotely exploitable covert channels, at the expense of a higher query completion time._
 
+- GUPT: Privacy Preserving Data Analysis Made Easy
+	<a name='Mohan:12'></a>
+
+	_Prashanth Mohan, Abhradeep Thakurta, Elaine Shi, Dawn Song, David E. Culler (SIGMOD 2012)_
+
+	>_It is often highly valuable for organizations to have their data analyzed by external agents. However, any program that computes on potentially sensitive data risks leaking information through its output. Differential privacy provides a theoretical framework for processing data while protecting the privacy of individual records in a dataset. Unfortunately, it has seen limited adoption because of the loss in output accuracy, the difficulty in making programs differentially private, lack of mechanisms to describe the privacy budget in a programmer’s utilitarian terms, and the challenging requirement that data owners and data analysts manually distribute the limited privacy budget between queries. 
+	This paper presents the design and evaluation of a new system, GUPT, that overcomes these challenges. Unlike existing differentially private systems such as PINQ and Airavat, it guarantees differential privacy to programs not developed with privacy in mind, makes no trust assumptions about the analysis program, and is secure to all known classes of side-channel attacks. 
+	GUPT uses a new model of data sensitivity that degrades privacy of data over time. This enables efficient allocation of different levels of privacy for different user applications while guaranteeing an overall constant level of privacy and maximizing the utility of each application. GUPT also introduces techniques that improve the accuracy of output while achieving the same level of privacy. These approaches enable GUPT to easily execute a wide variety of data analysis programs while providing both utility and privacy._
+
 - Formal Verification of Differential Privacy for Interactive Systems - Extended Abstract
 	<a name='Barthe:13'></a>
 	[[Paper]](https://www.sciencedirect.com/science/article/pii/S157106611100106X)
@@ -311,6 +387,14 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	>_Differential privacy is a notion of confidentiality that allows useful computations on sensible data while protecting the privacy of individuals. Proving differential privacy is a difficult and error-prone task that calls for principled approaches and tool support. Approaches based on linear types and static analysis have recently emerged; however, an increasing number of programs achieve privacy using techniques that fall out of their scope. Examples include programs that aim for weaker, approximate differential privacy guarantees and programs that achieve differential privacy without using any standard mechanisms. Providing support for reasoning about the privacy of such programs has been an open problem.
 	<br>
 	We report on CertiPriv, a machine-checked framework for reasoning about differential privacy built on top of the Coq proof assistant. The central component of CertiPriv is a quantitative extension of probabilistic relational Hoare logic that enables one to derive differential privacy guarantees for programs from first principles. We demonstrate the applicability of CertiPriv on a number of examples whose formal analysis is out of the reach of previous techniques. In particular, we provide the first machine-checked proofs of correctness of the Laplacian, Gaussian, and exponential mechanisms and of the privacy of randomized and streaming algorithms from the literature._
+
+- PSI: a Private data Sharing Interface
+	<a name='Gaboardi:16'></a>
+	[[Paper]](https://arxiv.org/abs/1609.04340)
+
+	_Marco Gaboardi, James Honaker, Gary King, Jack Murtagh, Kobbi Nissim, Jonathan Ullman, Salil Vadhan (ArXiv 2016)_
+
+	>_We provide an overview of PSI ("a Private data Sharing Interface"), a system we are developing to enable researchers in the social sciences and other fields to share and explore privacy-sensitive datasets with the strong privacy protections of differential privacy._
 
 - Differential Privacy: Now it's Getting Personal
 	<a name='Ebadi:16'></a>
@@ -342,9 +426,11 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 	_Daniel Winograd-Cort, Andreas Haeberlen, Aaron Roth, Benjamin C. Pierce (ACM on Programming Languages 2017)_
 
-	>_Differential privacy is a widely studied theory for analyzing sensitive data with a strong privacy guaranteeâany change in an individualâs data can have only a small statistical effect on the resultâand a growing number of programming languages now support differentially private data analysis. A common shortcoming of these languages is poor support for adaptivity. In practice, a data analyst rarely wants to run just one function over a sensitive database, nor even a predetermined sequence of functions with fixed privacy parameters; rather, she wants to engage in an interaction where, at each step, both the choice of the next function and its privacy parameters are informed by the results of prior functions. Existing languages support this scenario using a simple composition theorem, which often gives rather loose bounds on the actual privacy cost of composite functions, substantially reducing how much computation can be performed within a given privacy budget. The theory of differential privacy includes other theorems with much better bounds, but these have not yet been incorporated into programming languages.
+	>_Differential privacy is a widely studied theory for analyzing sensitive data with a strong privacy guaranteeâany change in an individualâs data can have only a small statistical effect on the results and a growing number of programming languages now support differentially private data analysis. A common shortcoming of these languages is poor support for adaptivity. In practice, a data analyst rarely wants to run just one function over a sensitive database, nor even a predetermined sequence of functions with fixed privacy parameters; rather, she wants to engage in an interaction where, at each step, both the choice of the next function and its privacy parameters are informed by the results of prior functions. Existing languages support this scenario using a simple composition theorem, which often gives rather loose bounds on the actual privacy cost of composite functions, substantially reducing how much computation can be performed within a given privacy budget. The theory of differential privacy includes other theorems with much better bounds, but these have not yet been incorporated into programming languages.
 	<br>
 	We propose a novel framework for adaptive composition that is elegant, practical, and implementable. It consists of a reformulation based on typed functional programming of privacy filters, together with a concrete realization of this framework in the design and implementation of a new language, called Adaptive Fuzz. Adaptive Fuzz transplants the core static type system of Fuzz to the adaptive setting by wrapping the Fuzz typechecker and runtime system in an outer adaptive layer, allowing Fuzz programs to be conveniently constructed and typechecked on the fly. We describe an interpreter for Adaptive Fuzz and report results from two case studies demonstrating its effectiveness for implementing common statistical algorithms over real data sets._
+
+
 
 - Sensitivity Analysis for Non-Interactive Differential Privacy: Bounds and Efficient Algorithms
 	<a name='Inan:17'></a>
@@ -353,6 +439,14 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	_Ali Inan, Mehmet Emre Gursoy, Yucel Saygin (IEEE Transactions on Dependable and Secure Computing 2017)_
 
 	>_Differential privacy (DP) has gained significant attention lately as the state of the art in privacy protection. It achieves privacy by adding noise to query answers. We study the problem of privately and accurately answering a set of statistical range queries in batch mode (i.e., under non-interactive DP). The noise magnitude in DP depends directly on the sensitivity of a query set, and calculating sensitivity was proven to be NP-hard. Therefore, efficiently bounding the sensitivity of a given query set is still an open research problem. In this work, we propose upper bounds on sensitivity that are tighter than those in previous work. We also propose a formulation to exactly calculate sensitivity for a set of COUNT queries. However, it is impractical to implement these bounds without sophisticated methods. We therefore introduce methods that build a graph model G based on a query set Q, such that implementing the aforementioned bounds can be achieved by solving two well-known clique problems on G. We make use of the literature in solving these clique problems to realize our bounds efficiently. Experimental results show that for query sets with a few hundred queries, it takes only a few seconds to obtain results._
+
+
+#### Links and Resources
+
+- [Harvard University Privacy Tools Project](https://privacytools.seas.harvard.edu/)
+- [DataTags](https://datatags.org/)
+- [PSI](https://beta.dataverse.org/custom/DifferentialPrivacyPrototype/)
+- [DP-comp](https://www.dpcomp.org/)
 
 
 <!-- Data-streams and Temporal Data -->
@@ -365,7 +459,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 - Pan-Private Streaming Algorithms [Jump to link](#Dwork:09)
 
 - Differential Privacy under Continual Observation 
-	<a name='Dwork:10'></a>
+	<a name='Dwork:10b'></a>
 	[[Paper]](https://www.cs.toronto.edu/~toni/Papers/dp-observation.pdf)
 
 	_Cynthia Dwork, Moni Naor, Toniann Pitassi, Guy N. Rothblum (STOC 2010)_
@@ -400,7 +494,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	_Yang Cao, Mashatoshi Yoshikawa (MDM 2015)_
 
 
-	>_Abstract—Recent emerging mobile and wearable technologies make it easy to collect personal spatiotemporal data such as activity trajectories in daily life. Releasing real-time statistics over trajectory streams produced by crowds of people is expected to be valuable for both academia and business, answering questions such as “How many people are in Central Station now?” However, analyzing these raw data will entail risks of compromising individual privacy. ϵ-Differential Privacy has emerged as a de facto standard for private statistics publishing because of its guarantee of being rigorous and mathematically provable. Since user trajectories will be generated infinitely, it is difficult to protect every trajectory under ϵ-differential privacy. To this end, we propose a flexible privacy model of ℓ-trajectory privacy to ensure every length of ℓ trajectories under protection of ϵ-differential privacy. Then we hierarchically design algorithms to satisfy ℓ-trajectory privacy. Experiments using four real-life datasets show that our proposed algorithms are effective and efficient._
+	>_Recent emerging mobile and wearable technologies make it easy to collect personal spatiotemporal data such as activity trajectories in daily life. Releasing real-time statistics over trajectory streams produced by crowds of people is expected to be valuable for both academia and business, answering questions such as “How many people are in Central Station now?” However, analyzing these raw data will entail risks of compromising individual privacy. ϵ-Differential Privacy has emerged as a de facto standard for private statistics publishing because of its guarantee of being rigorous and mathematically provable. Since user trajectories will be generated infinitely, it is difficult to protect every trajectory under ϵ-differential privacy. To this end, we propose a flexible privacy model of ℓ-trajectory privacy to ensure every length of ℓ trajectories under protection of ϵ-differential privacy. Then we hierarchically design algorithms to satisfy ℓ-trajectory privacy. Experiments using four real-life datasets show that our proposed algorithms are effective and efficient._
 
 - PeGaSus: Data-Adaptive Differentially Private Stream Processing
 	<a name='Chen:17'></a>
@@ -408,7 +502,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 	_Yan Chen, Ashwin Machanavajjhala, Michael Hay, Gerome Miklau (CCS 2017)_
 
-	>_Individuals are continually observed by an ever-increasing number of sensors that make up the Internet of Things. The resulting streams of data, which are analyzed in real time, can reveal sensitive personal information about individuals. Hence, there is an urgent need for stream processing solutions that can analyze these data in real time with provable guarantees of privacy and low error.
+	> _Individuals are continually observed by an ever-increasing number of sensors that make up the Internet of Things. The resulting streams of data, which are analyzed in real time, can reveal sensitive personal information about individuals. Hence, there is an urgent need for stream processing solutions that can analyze these data in real time with provable guarantees of privacy and low error.
 	<br>
 	We present PeGaSus, a new algorithm for differentially private stream processing. Unlike prior work that has focused on answering individual queries over streams, our algorithm is the first that can simultaneously support a variety of stream processing tasks -- counts, sliding windows, event monitoring -- over multiple resolutions of the stream. PeGaSus uses a Perturber to release noisy counts, a data-adaptive Perturber to identify stable uniform regions in the stream, and a query specific Smoother, which combines the outputs of the Perturber and Grouper to answer queries with low error. In a comprehensive study using a WiFi access point dataset, we empirically show that PeGaSus can answer continuous queries with lower error than the previous state-of-the-art algorithms, even those specialized to particular query types._
 
@@ -459,6 +553,16 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	[[Paper]](https://arxiv.org/pdf/1412.7584.pdf)
   
 	_Zhanglong Ji, Zachary C. Lipton, Charles Elkan (2014)_
+
+- Privacy-preserving Prediction
+    <a name='Dwork:18'></a>
+    [[Paper](https://arxiv.org/pdf/1803.10266.pdf)
+    
+    _Cynthia Dwork, Vitaly Feldman (ArXiv 2018)_
+
+    > _Ensuring differential privacy of models learned from sensitive user data is an important goal that has been studied extensively in recent years. It is now known that for some basic learning problems, especially those involving high-dimensional data, producing an accurate private model requires much more data than learning without privacy. At the same time, in many applications it is not necessary to expose the model itself. Instead users may be allowed to query the prediction model on their inputs only through an appropriate interface. Here we formulate the problem of ensuring privacy of individual predictions and investigate the overheads required to achieve it in several standard models of classification and regression. 
+    <br>
+    We first describe a simple baseline approach based on training several models on disjoint subsets of data and using standard private aggregation techniques to predict. We show that this approach has nearly optimal sample complexity for (realizable) PAC learning of any class of Boolean functions. At the same time, without strong assumptions on the data distribution, the aggregation step introduces a substantial overhead. We demonstrate that this overhead can be avoided for the well-studied class of thresholds on a line and for a number of standard settings of convex regression. The analysis of our algorithm for learning thresholds relies crucially on strong generalization guarantees that we establish for all differentially private prediction algorithms._
 
 
 ### Clustering
@@ -650,7 +754,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 <a name='_distributed_dp'></a>
 
 - Our Data, Ourselves: Privacy via Distributed Noise Generation
-	<a name='Dwork:2006b'></a>
+	<a name='Dwork:06b'></a>
 	[[Paper]](https://www.iacr.org/archive/eurocrypt2006/40040493/40040493.pdf)
 
 	_Cynthia Dwork, Krishnaram Kenthapadi, Frank McSherry, Ilya Mironov, Moni Naor (Eurocrypt 2006)_

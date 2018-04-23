@@ -759,9 +759,10 @@ This repo serves the purpose of organizing papers on Differential Privacy
 <a name='_adversarial_learning'></a>
 
 - On the Connection between Differential Privacy and Adversarial Robustness in Machine Learning
+	<a name='Lecuyer:18'></a>
 	[[Paper]](https://arxiv.org/pdf/1802.03471.pdf)
 
-	_Mathias Lecuyer, Vaggelis Atlidakis, Roxana Geambasu, Daniel Hsu, Suman Jana_
+	_Mathias Lecuyer, Vaggelis Atlidakis, Roxana Geambasu, Daniel Hsu, Suman Jana (ArXiv 2018)_
 
 	>_Adversarial examples in machine learning has been a topic of intense research interest, with attacks and defenses being developed in a tight back-and-forth. Most past defenses are best-effort, heuristic approaches that have all been shown to be vulnerable to sophisticated attacks. More recently, rigorous defenses that provide formal guarantees have emerged, but are hard to scale or generalize. A rigorous and general foundation for designing defenses is required to get us off this arms race trajectory. We propose leveraging differential privacy (DP) as a formal building block for robustness against adversarial examples. We observe that the semantic of DP is closely aligned with the formal definition of robustness to adversarial examples. We propose PixelDP, a strategy for learning robust deep neural networks based on formal DP guarantees. PixelDP networks give theoretical guarantees for a subset of their predictions regarding the robustness against adversarial perturbations of bounded size. Our evaluation with MNIST, CIFAR-10, and CIFAR-100 shows that PixelDP networks achieve accuracy under attack on par with the best-performing defense to date, but additionally certify robustness against meaningful-size 1-norm and 2-norm attacks for 40-60% of their predictions. Our experience points to DP as a rigorous, broadly applicable, and mechanism-rich foundation for robust machine learning._
 

@@ -504,8 +504,8 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 	>_Differential privacy is a recent notion of privacy tailored to the problem of statistical disclosure control: how to release statistical information about a set of people without compromising the the privacy of any individual [7].
 	We describe new work [10, 9] that extends differentially private data analysis beyond the traditional setting of a trusted curator operating, in perfect isolation, on a static dataset. We ask:
-	- How can we guarantee differential privacy, even against an adversary that has access to the algorithm's internal state, eg, by subpoena? An algorithm that achives this is said to be pan-private.
-	- How can we guarantee differential privacy when the algorithm must continually produce outputs? We call this differential privacy under continual observation.
+		- How can we guarantee differential privacy, even against an adversary that has access to the algorithm's internal state, eg, by subpoena? An algorithm that achives this is said to be pan-private.
+		- How can we guarantee differential privacy when the algorithm must continually produce outputs? We call this differential privacy under continual observation.
 	<br>
 	We also consider these requirements in conjunction._
 
@@ -611,7 +611,6 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	_Cynthia Dwork, Moni Naor, Omer Reingold, and Guy N. Rothblum (2015)_
 	
 	>_We consider the task of data analysis with pure differential privacy. We construct new and improved mechanisms for statistical release of interval and rectangle queries. We also obtain a new algorithm for counting over a data stream under continual observation, whose error has optimal dependence on the data stream's length.
-	<br>
 	A central ingredient in all of these result is a differentially private partition mechanism. Given set of data items drawn from a large universe, this mechanism outputs a partition of the universe into a small number of segments, each of which contain only a few of the data items._
 
 - Differentially Private Real-time Data Release over Infinite Trajectory Streams

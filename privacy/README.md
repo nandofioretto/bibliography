@@ -40,6 +40,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	+ [Reni Differential Privacy](#)
 	+ [Random Differential Privacy](#)
 
+- [Unclassified](#_unclassified)
 
 <!-- Differential Privacy Books and Seminal Papers -->
 
@@ -526,7 +527,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	_Darakhshan Mir, S. Muthukrishnan, Aleksandar Nikolov, Rebecca N. Wright (PODS 2011)_
 
 	>_Consider fully dynamic data, where we track data as it gets inserted and deleted. There are well developed notions of private data analyses with dynamic data, for example, using differential privacy. We want to go beyond privacy, and consider privacy together with security, formulated recently as pan-privacy by Dwork et al. (ICS 2010). Informally, pan-privacy preserves differential privacy while computing desired statistics on the data, even if the internal memory of the algorithm is compromised (say, by a malicious break-in or insider curiosity or by fiat by the government or law).
-	.
+
 	We study pan-private algorithms for basic analyses, like estimating distinct count, moments, and heavy hitter count, with fully dynamic data. We present the first known pan-private algorithms for these problems in the fully dynamic model. Our algorithms rely on sketching techniques popular in streaming: in some cases, we add suitable noise to a previously known sketch, using a novel approach of calibrating noise to the underlying problem structure and the projection matrix of the sketch; in other cases, we maintain certain statistics on sketches; in yet others, we define novel sketches. We also present the first known lower bounds explicitly for pan privacy, showing our results to be nearly optimal for these problems. Our lower bounds are stronger than those implied by differential privacy or dynamic data streaming alone and hold even if unbounded memory and/or unbounded processing time are allowed. The lower bounds use a noisy decoding argument and exploit a connection between pan-private algorithms and data sanitization._
 
 - Private and Continual Release of Statistics
@@ -842,6 +843,14 @@ This repo serves the purpose of organizing papers on Differential Privacy
 ### Regression
 <a name='_regression'></a>
 
+- Privacy-Utility Trade-off of Linear Regression under Random Projections and Additive Noise
+	<a name="Showkatbakhsh:18"></a>
+	[[Paper]](http://cankarakus.com/pdf/ISIT18_PrivOpt.pdf)
+
+	_Mehrdad Showkatbakhsh, Can Karakus, Suhas Diggavi (ISIT 2018)_
+
+	>_Data privacy is an important concern in machine learning, and is fundamentally at odds with the task of training useful learning models, which typically require acquisition of large amounts of private user data. One possible way of fulfilling the machine learning task while preserving user privacy is to train the model on a transformed, noisy version of the data, which does not reveal the data itself directly to the training procedure. In this work, we analyze the privacy-utility tradeoff of two such schemes for the problem of linear regression: additive noise, and random projections. In contrast to previous work, we consider a recently proposed notion of differential privacy that is based on conditional mutual information (MI-DP), which is stronger than the conventional (ε,δ)-differential privacy, and use relative objective error as the utility metric. We find that projecting the data to a lower-dimensional subspace before adding noise attains a better trade-off in general. We also make a connection between privacy problem and (non-coherent) SIMO, which has been extensively studied in wireless communication, and use tools from there for the analysis. We present numerical results demonstrating the performance of the scheme_
+
 - Differential Privacy and Robust Statistics
 	[[Paper]](http://www.stat.cmu.edu/~jinglei/dl09.pdf)
 	[[BibTex]](https://scholar.googleusercontent.com/scholar.bib?q=info:Z-LD4ASNIoQJ:scholar.google.com/&output=citation&scisig=AAGBfm0AAAAAWoXGe-UHAG19UsSNEQ2RwLXyyB4SdtbA&scisf=4&ct=citation&cd=-1&hl=en "BibTex")
@@ -928,6 +937,14 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 [Jump to Top](#_content)
 
+- Marginal Release Under Local Differential Privacy
+	<a name='Cormode:18'></a>
+	[[Paper]](http://dimacs.rutgers.edu/~graham/pubs/papers/sigmod18.pdf)
+
+	_Graham Cormode, Tejas Kulkarni, Divesh Srivastava (SIGMOD 2018)_
+
+	>_Many analysis and machine learning tasks require the availability of marginal statistics on multidimensional datasets while providing strong privacy guarantees for the data subjects. Applications for these statistics range from finding correlations in the data to fitting sophisticated prediction models. In this paper, we provide a set of algorithms for materializing marginal statistics under the strong model of local differential privacy. We prove the first tight theoretical bounds on the accuracy of marginals compiled under each approach, perform empirical evaluation to confirm these bounds, and evaluate them for tasks such as modeling and correlation testing. Our results show that releasing information based on (local) Fourier transformations of the input is preferable to alternatives based directly on (local) marginals._
+
 
 ### Lipschitz Differential Privacy 
 <a name='_lipschitz_dp'></a>
@@ -975,5 +992,17 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	This bound is optimal up to poly-logarithmic factors, as demonstrated by the [Private Multiplicative Weights algorithm](#hardt:10). In particular, our lower bound is the first to show that the sample complexity required for accuracy and (ε,δ)-differential privacy is asymptotically larger than what is required merely for accuracy, which is O(log|Q|/\alpha^2). In addition, we show that our lower bound holds for the specific case of k-way marginal queries (where |Q|=2^k \binomial(d, k)) when \alpha is not too small compared to d (e.g. when α is any fixed constant).  Our results rely on the existence of short \emph{fingerprinting codes} (Boneh and Shaw, CRYPTO'95, Tardos, STOC'03), which we show are closely connected to the sample complexity of differentially private data release. We also give a new method for combining certain types of sample complexity lower bounds into stronger lower bounds._
 
 
+## Unclassified
+<a name='_unclassified'></a>
+
+- Reversible Data Perturbation Techniques for Multi-level Privacy-preserving Data Publication
+	<a name='L1:18'></a>
+	[[Paper]](http://d-scholarship.pitt.edu/34503/1/camera_ready_paper.pdf)
+
+	_Chao Li, Balaji Palanisamy, Prashant Krishnamurthy 2018_
+
+	>[Comments]: Miscellaneous.
+
+	>_The amount of digital data generated in the Big Data age is increasingly rapidly. Privacy-preserving data publishing techniques based on differential privacy through data perturbation provide a safe release of datasets such that sensitive information present in the dataset cannot be inferred from the published data. Existing privacy-preserving data publishing solutions have focused on publishing a single snapshot of the data with the assumption that all users of the data share the same level of privilege and access the data with a fixed privacy level. Thus, such schemes do not directly support data release in cases when data users have different levels of access on the published data. While a straightforward approach of releasing a separate snapshot of the data for each possible data access level can allow multi-level access, it can result in a higher storage cost requiring separate storage space for each instance of the published data. In this paper, we develop a set of reversible data perturbation techniques for large bipartite association graphs that use perturbation keys to control the sequential generation of multiple snapshots of the data to offer multi-level access based on privacy levels. The proposed schemes enable multi-level data privacy, allowing selective deperturbation of the published data when suitable access credentials are provided. We evaluate the techniques through extensive experiments on a large real-world association graph dataset and our experiments show that the proposed techniques are efficient, scalable and effectively support multi-level data privacy on the published data._
 
 

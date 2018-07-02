@@ -40,6 +40,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	+ [Reni Differential Privacy](#)
 	+ [Random Differential Privacy](#)
 
+- [Unclassified](#_unclassified)
 
 <!-- Differential Privacy Books and Seminal Papers -->
 
@@ -432,8 +433,6 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	<br>
 	We propose a novel framework for adaptive composition that is elegant, practical, and implementable. It consists of a reformulation based on typed functional programming of privacy filters, together with a concrete realization of this framework in the design and implementation of a new language, called Adaptive Fuzz. Adaptive Fuzz transplants the core static type system of Fuzz to the adaptive setting by wrapping the Fuzz typechecker and runtime system in an outer adaptive layer, allowing Fuzz programs to be conveniently constructed and typechecked on the fly. We describe an interpreter for Adaptive Fuzz and report results from two case studies demonstrating its effectiveness for implementing common statistical algorithms over real data sets._
 
-
-
 - Sensitivity Analysis for Non-Interactive Differential Privacy: Bounds and Efficient Algorithms
 	<a name='Inan:17'></a>
 	[[Paper]](http://ieeexplore.ieee.org/document/7999165/)
@@ -466,12 +465,23 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 	>_In recent years, with the continuous development of significant data industrialization, trajectory data have more and more critical analytical value for urban construction and environmental monitoring. However, the trajectory contains a lot of personal privacy, and rashly publishing trajectory data set will cause serious privacy leakage risk. At present, the privacy protection of trajectory data mainly uses the methods of data anonymity and generalization, without considering the background knowledge of attackers and ignores the risk of adjacent location points may leak sensitive location points. In this paper, based on the above problems, combined with the location correlation of trajectory data, we proposed a plausible replacement method. Firstly, the correlation of trajectory points is proposed to classify the individual trajectories containing sensitive points. Then, according to the relevance of location points and the randomized response mechanism, a reasonable candidate set is selected to replace the sensitive points in the trajectory to satisfy the local differential privacy. Theoretical and experimental results show that the proposed method not only protects the sensitive information of individuals, but also does not affect the overall data distribution_
 
+
+
 <!-- Data-streams and Temporal Data -->
 
 ## Data Streams and Continous Observations
 <a name='_continous_observations'></a>
 
 [Jump to Top](#_content)
+
+-  Time series compressibility and privacy
+	<a name='Papadimitriou:07'></a>
+	[[Paper]](https://pdfs.semanticscholar.org/758f/3023f29a59646d186c544e536d9fbeb0611a.pdf )
+
+	_Spiros Papadimitriou, Feifei Li, George Kollios, Philip S Yu (2007)_
+
+	>_In this paper we study the trade-offs between time series compressibility and partial information hiding and their fundamental implications on how we should introduce uncertainty about individual values by perturbing them. More specifically, if the perturbation does not have the same compressibility properties as the original data, then it can be detected and filtered out, reducing uncertainty. Thus, by making the perturbation “similar” to the original data, we can both preserve the structure of the data better, while simultaneously making breaches harder. However, as data become more compressible, a fraction of the uncertainty can be removed if true values are leaked, revealing how they were perturbed. We formalize these notions, study the above trade-offs on real data and develop practical schemes which strike a good balance and can also be extended for on-the-fly data hiding in a streaming environment._
+
 
 - Pan-Private Streaming Algorithms [Jump to link](#Dwork:09)
 
@@ -481,19 +491,111 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 	_Cynthia Dwork, Moni Naor, Toniann Pitassi, Guy N. Rothblum (STOC 2010)_
 
+    >[Comments]: Event based privacy.
+
 	>_Differential privacy is a recent notion of privacy tailored to privacy-preserving data analysis [11]. Up to this point, research on differentially private data analysis has focused on the setting of a trusted curator holding a large, static, data set; thus every computation is a "one-shot" object: there is no point in computing something twice, since the result will be unchanged, up to any randomness introduced for privacy. However, many applications of data analysis involve repeated computations, either because the entire goal is one of monitoring, e.g., of traffic conditions, search trends, or incidence of influenza, or because the goal is some kind of adaptive optimization, e.g., placement of data to minimize access costs. In these cases, the algorithm must permit continual observation of the system's state. We therefore initiate a study of differential privacy under continual observation. We identify the problem of maintaining a counter in a privacy preserving manner and show its wide applicability to many different problems._
-	
-- [TODO:] DP and Check continuous observation papers (Dwork, Comode, ...)
 
-- Gradual Release of Sensitive Data under Differential Privacy
-	<a name="Koufogiannis:16"></a>
-	[[Paper]](http://repository.cmu.edu/cgi/viewcontent.cgi?article=1145&context=jpc)
-	
-	_Fragkiskos Koufogiannis, Shuo Han, George J. Pappas (Journal of Privacy and Confidentiality 2016_
+- Differential privacy in new settings
+	<a name='Dwork:10c'></a>
+	[[Paper]](https://www.microsoft.com/en-us/research/wp-content/uploads/2010/01/dwork_soda10.pdf)
 
-    >_We introduce the problem of releasing private data under differential privacy when the privacy level is subject to change over time. Existing work assumes that privacy level is determined by the system designer as a fixed value before private data is released. For certain applications, however, users may wish to relax the privacy level for subsequent releases of the same data after either a re-evaluation of the privacy concerns or the need for better accuracy. Specifically, given a database containing private data, we assume that a response y1 that preserves \epsilon1-differential privacy has already been published. Then, the privacy level is relaxed to \epsilon2, with \epsilon2 > \epsilon1, and we wish to publish a more accurate response y2 while the joint response (y1, y2) preserves \epsilon2-differential privacy. How much accuracy is lost in the scenario of gradually releasing two responses y1 and y2 compared to the scenario of releasing a single response that is \epsilon2-differentially private? Our results consider the more general case with multiple privacy level relaxations and show that there exists a composite mechanism that achieves no loss in accuracy.
-    <br>
-    We consider the case in which the private data lies within R^n with an adjacency relation induced by the L1-norm, and we initially focus on mechanisms that approximate identity queries. We show that the same accuracy can be achieved in the case of gradual release through a mechanism whose outputs can be described by a lazy Markov stochastic process. This stochastic process has a closed form expression and can be efficiently sampled. Moreover, our results extend beyond identity queries to a more general family of privacy-preserving mechanisms. To this end, we demonstrate the applicability of our tool to multiple scenarios including Google’s project RAPPOR, trading of private data, and controlled transmission of private data in a social network. Finally, we derive similar results for the approximated differential privacy._
+	_Cynthia Dwork, Moni Naor, Toniann Pitassi, Guy N. Rothblum (SODA 2010)_
+
+    >[Comments]: Pan privacy and Event based privacy.
+
+	>_Differential privacy is a recent notion of privacy tailored to the problem of statistical disclosure control: how to release statistical information about a set of people without compromising the the privacy of any individual [7].
+	We describe new work [10, 9] that extends differentially private data analysis beyond the traditional setting of a trusted curator operating, in perfect isolation, on a static dataset. We ask:
+		- How can we guarantee differential privacy, even against an adversary that has access to the algorithm's internal state, eg, by subpoena? An algorithm that achives this is said to be pan-private.
+		- How can we guarantee differential privacy when the algorithm must continually produce outputs? We call this differential privacy under continual observation.
+	<br>
+	We also consider these requirements in conjunction._
+
+- Differentially private aggregation of distributed time-series with transformation and encryption
+	<a name="Rastogi:10"></a>
+	[[Paper]](https://dl.acm.org/citation.cfm?id=1807247)
+
+	_Vibhor Rastogi, Suman Nath (SIGMOD 2010)_
+
+	>_We propose the first differentially private aggregation algorithm for distributed time-series data that offers good practical utility without any trusted server. This addresses two important challenges in participatory data-mining applications where (i) individual users collect temporally correlated time-series data (such as location traces, web history, personal health data), and (ii) an untrusted third-party aggregator wishes to run aggregate queries on the data. To ensure differential privacy for time-series data despite the presence of temporal correlation, we propose the Fourier Perturbation Algorithm (FPAk). Standard differential privacy techniques perform poorly for time-series data. To answer n queries, such techniques can result in a noise of Θ(n) to each query answer, making the answers practically useless if n is large. Our FPAk algorithm perturbs the Discrete Fourier Transform of the query answers. For answering n queries, FPAk improves the expected error from Θ(n) to roughly Θ(k) where k is the number of Fourier coefficients that can (approximately) reconstruct all the n query answers. Our experiments show that k << n for many real-life data-sets resulting in a huge error-improvement for FPAk. 
+	<br>
+	To deal with the absence of a trusted central server, we propose the Distributed Laplace Perturbation Algorithm (DLPA) to add noise in a distributed way in order to guarantee differential privacy. To the best of our knowledge, DLPA is the first distributed differentially private algorithm that can scale with a large number of users: DLPA outperforms the only other distributed solution for differential privacy proposed so far, by reducing the computational load per user from O(U) to O(1) where U is the number of users._
+
+- Pan-private algorithms via statistics on sketches
+	<a name='Mir:11'></a>
+	[[Paper]](https://www.cs.rutgers.edu/~rwright1/Publications/pods11.pdf)
+
+	_Darakhshan Mir, S. Muthukrishnan, Aleksandar Nikolov, Rebecca N. Wright (PODS 2011)_
+
+	>_Consider fully dynamic data, where we track data as it gets inserted and deleted. There are well developed notions of private data analyses with dynamic data, for example, using differential privacy. We want to go beyond privacy, and consider privacy together with security, formulated recently as pan-privacy by Dwork et al. (ICS 2010). Informally, pan-privacy preserves differential privacy while computing desired statistics on the data, even if the internal memory of the algorithm is compromised (say, by a malicious break-in or insider curiosity or by fiat by the government or law).
+
+	We study pan-private algorithms for basic analyses, like estimating distinct count, moments, and heavy hitter count, with fully dynamic data. We present the first known pan-private algorithms for these problems in the fully dynamic model. Our algorithms rely on sketching techniques popular in streaming: in some cases, we add suitable noise to a previously known sketch, using a novel approach of calibrating noise to the underlying problem structure and the projection matrix of the sketch; in other cases, we maintain certain statistics on sketches; in yet others, we define novel sketches. We also present the first known lower bounds explicitly for pan privacy, showing our results to be nearly optimal for these problems. Our lower bounds are stronger than those implied by differential privacy or dynamic data streaming alone and hold even if unbounded memory and/or unbounded processing time are allowed. The lower bounds use a noisy decoding argument and exploit a connection between pan-private algorithms and data sanitization._
+
+- Private and Continual Release of Statistics
+	<a name='Chan:11'></a>
+	[[Paper]](https://eprint.iacr.org/2010/076.pdf)
+
+	_T.-H. Hubert Chan, Elaine Shi, Dawn Song (TISSEC 2011)_
+
+	>_We ask the question: how can Web sites and data aggregators continually release updated statistics, and meanwhile preserve each individual user’s privacy? Suppose we are given a stream of 0’s and 1’s. We propose a differentially private continual counter that outputs at every time step the approximate number of 1’s seen thus far. Our counter construction has error that is only poly-log in the number of time steps. We can extend the basic counter construction to allow Web sites to continually give top-k and hot items suggestions while preserving users’ privacy._
+
+- Differentially private continual monitoring of heavy hitters from distributed streams
+	<a name='Chan:12'></a>
+	[[Paper]](https://eprint.iacr.org/2012/218.pdf)
+
+	_T-H. Hubert Chan, Mingfei Li, Elaine Shi, and Wenchang Xu (PETS 2012)_
+
+	>_We consider applications scenarios where an untrusted aggregator wishes to continually monitor the heavy-hitters across a set of distributed streams. Since each stream can contain sensitive data, such as the purchase history of customers, we wish to guarantee the privacy of each stream, while allowing the untrusted aggregator to accurately detect the heavy hitters and their approximate frequencies. Our protocols are scalable in settings where the volume of streaming data is large, since we guarantee low memory usage and processing overhead by each data source, and low communication overhead between the data sources and the aggregator._
+
+- Real-time Aggregate Monitoring with Differential Privacy
+	<a name='Fan:12'></a>
+	[[Paper]](https://dl.acm.org/citation.cfm?id=2398595)
+
+	_Liyue Fan, Li Xiong (CIKM 2012)_ 
+
+    >[Comments]: Extended in [Fan:14](#Fan:14).
+
+	>_Sharing real-time aggregate statistics of private data has given much benefit to the public to perform data mining for understanding important phenomena, such as Influenza outbreaks and traffic congestion. However, releasing time-series data with standard differential privacy mechanism has limited utility due to high correlation between data values. We propose FAST, an adaptive system to release real-time aggregate statistics under differential privacy with improved utility. To minimize overall privacy cost, FAST adaptively samples long time-series according to detected data dynamics. To improve the accuracy of data release per time stamp, filtering is used to predict data values at non-sampling points and to estimate true values from noisy observations at sampling points. Our experiments with three real data sets confirm that FAST improves the accuracy of time-series release and has excellent performance even under very small privacy cost._
+
+- Private decayed predicate sums on streams
+	<a name='Bolt:13'></a>
+	[[Paper]](https://dl.acm.org/citation.cfm?id=2448530)
+
+	_Jean Bolot, Nadia Fawaz, S. Muthukrishnan, Aleksandar Nikolov, Nina Taft (ICDT 2013)_
+
+	>_In many monitoring applications, recent data is more important than distant data. How does this affect privacy of data analysis? We study a general class of data analyses --- predicate sums --- in this context.
+	Formally, we study the problem of estimating predicate sums privately, for sliding windows and other decay models. While we require accuracy in analysis with respect to the decayed sums, we still want differential privacy for the entire past. This is challenging because window sums are not monotonic or even near-monotonic as the problems studied previously [DPNR10].
+	<br>
+	We present accurate ε-differentially private algorithms for decayed sums. For window and exponential decay sums, our algorithms are accurate up to additive 1/ε and polylog terms in the range of the computed function; for polynomial decay sums which are technically more challenging because partial solutions do not compose easily, our algorithms incur additional relative error. Our algorithm for polynomial decay sums generalizes to arbitrary decay sum functions. The algorithm crucially relies on our solution for the window sum problem as a subroutine. Further, we show lower bounds, tight within polylog factors and tight with respect to the dependence on the probability of error. Our results are obtained via a natural dyadic tree we maintain, but the crux is we treat the tree data structure in non-uniform manner.
+	<br>
+	We also extend our study and consider the "dual" question of maintaining conventional running sums on the entire data thus far, but when privacy constraints expire with time. We define a new model of privacy with expiration and consider the problems of designing accurate running sum and linear map algorithms in this model. Now the goal is to design algorithms whose accuracy guarantees scale with the size of the privacy window. We reduce running sum with a privacy window W to window sum without privacy expiration, and characterize the accuracy of output perturbation for general linear maps with privacy window W._
+
+- Efficient and accurate strategies for differentially-private sliding window queries
+	<a name='Cao:13'></a>
+	[[Paper]](https://dl.acm.org/citation.cfm?id=2452400)
+
+	_Jianneng Cao, Qian Xiao, Gabriel Ghinita, Ninghui Li, Elisa Bertino, Kian-Lee Tan (EDBT 2013)_
+
+	>_Regularly releasing the aggregate statistics about data streams in a privacy-preserving way not only serves valuable commercial and social purposes, but also protects the privacy of individuals. This problem has already been studied under differential privacy, but only for the case of a single continuous query that covers the entire time span, e.g., counting the number of tuples seen so far in the stream. However, most real-world applications are window-based, that is, they are interested in the statistical information about streaming data within a window, instead of the whole unbound stream. Furthermore, a Data Stream Management System (DSMS) may need to answer numerous correlated aggregated queries simultaneously, rather than a single one. To cope with these requirements, we study how to release differentially private answers for a set of sliding window aggregate queries. We propose two solutions, each consisting of query sampling and composition. We first selectively sample a subset of representative sliding window queries from the set of all the submitted ones. The representative queries are answered by adding Laplace noises in a way satisfying differential privacy. For each non-representative query, we compose its answer from the query results of those representatives. The experimental evaluation shows that our solutions are efficient and effective._
+
+- Differentially private event sequences over infinite streams
+	<a name='Kellaris:14'></a>
+	[[Paper]](http://www.vldb.org/pvldb/vol7/p1155-kellaris.pdf)
+
+	_Georgios Kellaris, Stavros Papadopoulos, Xiaokui Xiao, Dimitris Papadias (VLDB 2014)_
+
+    >[Comments]: Introduced w-event privacy.
+
+	>_Numerous applications require continuous publication of statistics or monitoring purposes, such as real-time traffic analysis, timely disease outbreak discovery, and social trends observation. These statistics may be derived from sensitive user data and, hence, necessitate privacy preservation. A notable paradigm for offering strong privacy guarantees in statistics publishing is ε-differential privacy. However, there is limited literature that adapts this concept to settings where the statistics are computed over an infinite stream of "events" (i.e., data items generated by the users), and published periodically. These works aim at hiding a single event over the entire stream. We argue that, in most practical scenarios, sensitive information is revealed from multiple events occurring at contiguous time instances. Towards this end, we put forth the novel notion of w-event privacy over infinite streams, which protects any event sequence occurring in w successive time instants. We first formulate our privacy concept, motivate its importance, and introduce a methodology for achieving it. We next design two instantiations, whose utility is independent of the stream length. Finally, we confirm the practicality of our solutions experimenting with real data._
+
+
+- An Adaptive Approach to Real-Time Aggregate Monitoring With Differential Privacy
+	<a name='Fan:14'></a>
+	[[Paper]](https://ieeexplore.ieee.org/document/6542629/)
+
+	_Liyue Fan, Li Xiong (IEEE Trans, on Knowledge and Data Engineering 2014)_ 
+
+	>_Sharing real-time aggregate statistics of private data is of great value to the public to perform data mining for understanding important phenomena, such as Influenza outbreaks and traffic congestion. However, releasing time-series data with standard differential privacy mechanism has limited utility due to high correlation between data values. We propose FAST, a novel framework to release real-time aggregate statistics under differential privacy based on filtering and adaptive sampling. To minimize the overall privacy cost, FAST adaptively samples long time-series according to the detected data dynamics. To improve the accuracy of data release per time stamp, FAST predicts data values at non-sampling points and corrects noisy observations at sampling points. Our experiments with real-world as well as synthetic data sets confirm that FAST improves the accuracy of released aggregates even under small privacy cost and can be used to enable a wide range of monitoring applications._
+
  
  - Privacy Integrated Data Stream Queries
  	<a name='Waye:14'></a>
@@ -503,6 +605,14 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
  	>_Research on differential privacy is generally concerned with examining data sets that are static. Because the data sets do not change, every computation on them produces “one-shot” query results; the results do not change aside from randomness introduced for privacy . There are many circumstances, however, where this model does not apply, or is simply infeasible. Data streams are examples of non-static data sets where results may change as more data is streamed. Theoretical support for differential privacy with data streams has been researched in the form of differentially private streaming algorithms. In this paper, we present a practical framework for which a non-expert can perform differentially private operations on data streams. The system is built as an extension to PINQ (Privacy Integrated Queries), a differentially private programming framework for static data sets. The streaming extension provides a programmatic interface for the different types of streaming differential privacy from the literature so that the privacy trade-offs of each type of algorithm can be understood by a non-expert programmer._
 
+- Pure differential privacy for rectangle queries via private partitions
+	<a name='Dwork:15'></a>
+	[[Paper]](https://link.springer.com/content/pdf/10.1007/978-3-662-48800-3_30.pdf)
+
+	_Cynthia Dwork, Moni Naor, Omer Reingold, and Guy N. Rothblum (2015)_
+	
+	>_We consider the task of data analysis with pure differential privacy. We construct new and improved mechanisms for statistical release of interval and rectangle queries. We also obtain a new algorithm for counting over a data stream under continual observation, whose error has optimal dependence on the data stream's length.
+	A central ingredient in all of these result is a differentially private partition mechanism. Given set of data items drawn from a large universe, this mechanism outputs a partition of the universe into a small number of segments, each of which contain only a few of the data items._
 
 - Differentially Private Real-time Data Release over Infinite Trajectory Streams
 	<a name='Cao:15'></a>
@@ -510,8 +620,17 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 	_Yang Cao, Mashatoshi Yoshikawa (MDM 2015)_
 
-
 	>_Recent emerging mobile and wearable technologies make it easy to collect personal spatiotemporal data such as activity trajectories in daily life. Releasing real-time statistics over trajectory streams produced by crowds of people is expected to be valuable for both academia and business, answering questions such as “How many people are in Central Station now?” However, analyzing these raw data will entail risks of compromising individual privacy. ϵ-Differential Privacy has emerged as a de facto standard for private statistics publishing because of its guarantee of being rigorous and mathematically provable. Since user trajectories will be generated infinitely, it is difficult to protect every trajectory under ϵ-differential privacy. To this end, we propose a flexible privacy model of ℓ-trajectory privacy to ensure every length of ℓ trajectories under protection of ϵ-differential privacy. Then we hierarchically design algorithms to satisfy ℓ-trajectory privacy. Experiments using four real-life datasets show that our proposed algorithms are effective and efficient._
+
+- Gradual Release of Sensitive Data under Differential Privacy
+	<a name="Koufogiannis:16"></a>
+	[[Paper]](http://repository.cmu.edu/cgi/viewcontent.cgi?article=1145&context=jpc)
+	
+	_Fragkiskos Koufogiannis, Shuo Han, George J. Pappas (Journal of Privacy and Confidentiality 2016)_
+
+    >_We introduce the problem of releasing private data under differential privacy when the privacy level is subject to change over time. Existing work assumes that privacy level is determined by the system designer as a fixed value before private data is released. For certain applications, however, users may wish to relax the privacy level for subsequent releases of the same data after either a re-evaluation of the privacy concerns or the need for better accuracy. Specifically, given a database containing private data, we assume that a response y1 that preserves \epsilon1-differential privacy has already been published. Then, the privacy level is relaxed to \epsilon2, with \epsilon2 > \epsilon1, and we wish to publish a more accurate response y2 while the joint response (y1, y2) preserves \epsilon2-differential privacy. How much accuracy is lost in the scenario of gradually releasing two responses y1 and y2 compared to the scenario of releasing a single response that is \epsilon2-differentially private? Our results consider the more general case with multiple privacy level relaxations and show that there exists a composite mechanism that achieves no loss in accuracy.
+    <br>
+    We consider the case in which the private data lies within R^n with an adjacency relation induced by the L1-norm, and we initially focus on mechanisms that approximate identity queries. We show that the same accuracy can be achieved in the case of gradual release through a mechanism whose outputs can be described by a lazy Markov stochastic process. This stochastic process has a closed form expression and can be efficiently sampled. Moreover, our results extend beyond identity queries to a more general family of privacy-preserving mechanisms. To this end, we demonstrate the applicability of our tool to multiple scenarios including Google’s project RAPPOR, trading of private data, and controlled transmission of private data in a social network. Finally, we derive similar results for the approximated differential privacy._
 
 - PeGaSus: Data-Adaptive Differentially Private Stream Processing
 	<a name='Chen:17'></a>
@@ -724,6 +843,14 @@ This repo serves the purpose of organizing papers on Differential Privacy
 ### Regression
 <a name='_regression'></a>
 
+- Privacy-Utility Trade-off of Linear Regression under Random Projections and Additive Noise
+	<a name="Showkatbakhsh:18"></a>
+	[[Paper]](http://cankarakus.com/pdf/ISIT18_PrivOpt.pdf)
+
+	_Mehrdad Showkatbakhsh, Can Karakus, Suhas Diggavi (ISIT 2018)_
+
+	>_Data privacy is an important concern in machine learning, and is fundamentally at odds with the task of training useful learning models, which typically require acquisition of large amounts of private user data. One possible way of fulfilling the machine learning task while preserving user privacy is to train the model on a transformed, noisy version of the data, which does not reveal the data itself directly to the training procedure. In this work, we analyze the privacy-utility tradeoff of two such schemes for the problem of linear regression: additive noise, and random projections. In contrast to previous work, we consider a recently proposed notion of differential privacy that is based on conditional mutual information (MI-DP), which is stronger than the conventional (ε,δ)-differential privacy, and use relative objective error as the utility metric. We find that projecting the data to a lower-dimensional subspace before adding noise attains a better trade-off in general. We also make a connection between privacy problem and (non-coherent) SIMO, which has been extensively studied in wireless communication, and use tools from there for the analysis. We present numerical results demonstrating the performance of the scheme_
+
 - Differential Privacy and Robust Statistics
 	[[Paper]](http://www.stat.cmu.edu/~jinglei/dl09.pdf)
 	[[BibTex]](https://scholar.googleusercontent.com/scholar.bib?q=info:Z-LD4ASNIoQJ:scholar.google.com/&output=citation&scisig=AAGBfm0AAAAAWoXGe-UHAG19UsSNEQ2RwLXyyB4SdtbA&scisf=4&ct=citation&cd=-1&hl=en "BibTex")
@@ -810,6 +937,14 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 [Jump to Top](#_content)
 
+- Marginal Release Under Local Differential Privacy
+	<a name='Cormode:18'></a>
+	[[Paper]](http://dimacs.rutgers.edu/~graham/pubs/papers/sigmod18.pdf)
+
+	_Graham Cormode, Tejas Kulkarni, Divesh Srivastava (SIGMOD 2018)_
+
+	>_Many analysis and machine learning tasks require the availability of marginal statistics on multidimensional datasets while providing strong privacy guarantees for the data subjects. Applications for these statistics range from finding correlations in the data to fitting sophisticated prediction models. In this paper, we provide a set of algorithms for materializing marginal statistics under the strong model of local differential privacy. We prove the first tight theoretical bounds on the accuracy of marginals compiled under each approach, perform empirical evaluation to confirm these bounds, and evaluate them for tasks such as modeling and correlation testing. Our results show that releasing information based on (local) Fourier transformations of the input is preferable to alternatives based directly on (local) marginals._
+
 
 ### Lipschitz Differential Privacy 
 <a name='_lipschitz_dp'></a>
@@ -857,5 +992,17 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	This bound is optimal up to poly-logarithmic factors, as demonstrated by the [Private Multiplicative Weights algorithm](#hardt:10). In particular, our lower bound is the first to show that the sample complexity required for accuracy and (ε,δ)-differential privacy is asymptotically larger than what is required merely for accuracy, which is O(log|Q|/\alpha^2). In addition, we show that our lower bound holds for the specific case of k-way marginal queries (where |Q|=2^k \binomial(d, k)) when \alpha is not too small compared to d (e.g. when α is any fixed constant).  Our results rely on the existence of short \emph{fingerprinting codes} (Boneh and Shaw, CRYPTO'95, Tardos, STOC'03), which we show are closely connected to the sample complexity of differentially private data release. We also give a new method for combining certain types of sample complexity lower bounds into stronger lower bounds._
 
 
+## Unclassified
+<a name='_unclassified'></a>
+
+- Reversible Data Perturbation Techniques for Multi-level Privacy-preserving Data Publication
+	<a name='L1:18'></a>
+	[[Paper]](http://d-scholarship.pitt.edu/34503/1/camera_ready_paper.pdf)
+
+	_Chao Li, Balaji Palanisamy, Prashant Krishnamurthy 2018_
+
+	>[Comments]: Miscellaneous.
+
+	>_The amount of digital data generated in the Big Data age is increasingly rapidly. Privacy-preserving data publishing techniques based on differential privacy through data perturbation provide a safe release of datasets such that sensitive information present in the dataset cannot be inferred from the published data. Existing privacy-preserving data publishing solutions have focused on publishing a single snapshot of the data with the assumption that all users of the data share the same level of privilege and access the data with a fixed privacy level. Thus, such schemes do not directly support data release in cases when data users have different levels of access on the published data. While a straightforward approach of releasing a separate snapshot of the data for each possible data access level can allow multi-level access, it can result in a higher storage cost requiring separate storage space for each instance of the published data. In this paper, we develop a set of reversible data perturbation techniques for large bipartite association graphs that use perturbation keys to control the sequential generation of multiple snapshots of the data to offer multi-level access based on privacy levels. The proposed schemes enable multi-level data privacy, allowing selective deperturbation of the published data when suitable access credentials are provided. We evaluate the techniques through extensive experiments on a large real-world association graph dataset and our experiments show that the proposed techniques are efficient, scalable and effectively support multi-level data privacy on the published data._
 
 

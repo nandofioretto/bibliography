@@ -1,0 +1,1475 @@
+%% Differential Privacy BibFile
+%% -------------------
+%% author: Ferdinando Fioretto
+%% email: fioretto@umich.edu
+%% Last update: Mar, 26, 2018
+%%
+%% Content:
+%% --------
+%$ - Theory
+%% - Systems supporting Differential Privacy
+
+
+
+%%%%%%%%%%%%%
+%% Thoery
+%%%%%%%%%%%%%%
+@inproceedings{Dwork:09,
+  title={Differential privacy and robust statistics},
+  author={Dwork, Cynthia and Lei, Jing},
+  booktitle={ACM symposium on Theory of computing},
+  year={2009},
+}
+
+@inproceedings{Murtagh:16,
+  title={The complexity of computing the optimal composition of differential privacy},
+  author={Murtagh, Jack and Vadhan, Salil},
+  booktitle={Theory of Cryptography Conference},
+  pages={157--175},
+  year={2016},
+  organization={Springer}
+}
+
+@article{Kairouz:17,
+  title={The composition theorem for differential privacy},
+  author={Kairouz, Peter and Oh, Sewoong and Viswanath, Pramod},
+  journal={IEEE Transactions on Information Theory},
+  volume={63},
+  number={6},
+  pages={4037--4049},
+  year={2017},
+  publisher={IEEE}
+}
+
+
+
+%%%%%%%%%%%%%
+%% Data Stream and Real data Analysis
+%%%%%%%%%%%%%%
+
+@inproceedings{papadimitriou:07,
+  title={Time series compressibility and privacy},
+  author={Papadimitriou, Spiros and Li, Feifei and Kollios, George and Yu, Philip S},
+  booktitle={Proceedings of the 33rd international conference on Very large data bases},
+  pages={459--470},
+  year={2007},
+  organization={VLDB Endowment}
+}
+
+@inproceedings{Dwork:10b,
+  title={Differential privacy under continual observation},
+  author={Dwork, Cynthia and Naor, Moni and Pitassi, Toniann and Rothblum, Guy N},
+  booktitle={Proceedings of the forty-second ACM symposium on Theory of computing},
+  pages={715--724},
+  year={2010},
+  organization={ACM}
+}
+
+@inproceedings{Dwork:10c,
+  author = {Dwork, Cynthia},
+  title = {Differential Privacy in New Settings},
+  booktitle = {Proceedings of the Twenty-first Annual ACM-SIAM Symposium on Discrete Algorithms},
+  series = {SODA '10},
+  year = {2010},
+  isbn = {978-0-898716-98-6},
+  location = {Austin, Texas},
+  pages = {174--183},
+  numpages = {10},
+  url = {http://dl.acm.org/citation.cfm?id=1873601.1873617},
+  acmid = {1873617},
+  publisher = {Society for Industrial and Applied Mathematics},
+  address = {Philadelphia, PA, USA},
+} 
+
+@inproceedings{Rastogi:10,
+  title={Differentially private aggregation of distributed time-series with transformation and encryption},
+  author={Rastogi, Vibhor and Nath, Suman},
+  booktitle={Proceedings of the 2010 ACM SIGMOD International Conference on Management of data},
+  pages={735--746},
+  year={2010},
+  organization={ACM},
+  url={https://www.microsoft.com/en-us/research/wp-content/uploads/2009/11/paper.pdf}
+}
+
+
+@inproceedings{Mir:11,
+  title = {Pan-private algorithms via statistics on sketches},
+  author  = {Mir, Darakhshan and Muthukrishnan, S and Nikolov, Aleksandar and Wright, Rebecca N},
+  booktitle = {Proceedings of the thirtieth ACM SIGMOD-SIGACT-SIGART symposium on Principles of database systems},
+  pages = {37--48},
+  year  = {2011},
+  organization  = {ACM}
+}
+
+@article{Chan:11,
+  title = {Private and continual release of statistics},
+  author = {Chan, T-H Hubert and Shi, Elaine and Song, Dawn},
+  journal = {ACM Transactions on Information and System Security (TISSEC)},
+  volume = {14},
+  number = {3},
+  pages = {26},
+  year = {2011},
+  publisher = {ACM}
+}
+
+@inproceedings{Chan:12,
+  title = {Differentially private continual monitoring of heavy hitters from distributed streams},
+  author = {Chan, T-H Hubert and Li, Mingfei and Shi, Elaine and Xu, Wenchang},
+  booktitle = {International Symposium on Privacy Enhancing Technologies Symposium},
+  pages = {140--159},
+  year = {2012},
+  organization = {Springer}
+}
+
+@inproceedings{Fan:12,
+  title = {Real-time aggregate monitoring with differential privacy},
+  author = {Fan, Liyue and Xiong, Li},
+  booktitle = {Proceedings of the 21st ACM international conference on Information and knowledge management},
+  pages = {2169--2173},
+  year = {2012},
+  organization = {ACM}
+}
+
+@inproceedings{Cao:13,
+  title = {Efficient and accurate strategies for differentially-private sliding window queries},
+  author = {Cao, Jianneng and Xiao, Qian and Ghinita, Gabriel and Li, Ninghui and Bertino, Elisa and Tan, Kian-Lee},
+  booktitle = {Proceedings of the 16th International Conference on Extending Database Technology},
+  pages = {191--202},
+  year = {2013},
+  organization = {ACM}
+}
+
+@inproceedings{Bolot:13,
+  title = {Private decayed predicate sums on streams},
+  author = {Bolot, Jean and Fawaz, Nadia and Muthukrishnan, S and Nikolov, Aleksandar and Taft, Nina},
+  booktitle = {Proceedings of the 16th International Conference on Database Theory},
+  pages = {284--295},
+  year = {2013},
+  organization = {ACM}
+}
+
+@article{Fan:14, 
+  author = {L. Fan and L. Xiong}, 
+  journal = {IEEE Transactions on Knowledge and Data Engineering}, 
+  title = {An Adaptive Approach to Real-Time Aggregate Monitoring With Differential Privacy}, 
+  year = {2014}, 
+  volume = {26}, 
+  number = {9}, 
+  pages = {2094-2106}, 
+  doi = {10.1109/TKDE.2013.96}, 
+  ISSN = {1041-4347}, 
+  month = {Sept}
+}
+
+@article{Kellaris:14,
+  title = {Differentially private event sequences over infinite streams},
+  author = {Kellaris, Georgios and Papadopoulos, Stavros and Xiao, Xiaokui and Papadias, Dimitris},
+  journal = {Proceedings of the VLDB Endowment},
+  volume = {7},
+  number = {12},
+  pages = {1155--1166},
+  year = {2014},
+  publisher = {VLDB Endowment}
+}
+
+@inproceedings{Dwork:14,
+  title = {Pure differential privacy for rectangle queries via private partitions},
+  author = {Dwork, Cynthia and Naor, Moni and Reingold, Omer and Rothblum, Guy N},
+  booktitle = {International Conference on the Theory and Application of Cryptology and Information Security},
+  pages = {735--751},
+  year = {2014},
+  organization = {Springer}
+}
+
+@inproceedings{Chen:17,
+  title = {PeGaSus: Data-Adaptive Differentially Private Stream Processing},
+  author = {Chen, Yan and Machanavajjhala, Ashwin and Hay, Michael and Miklau, Gerome},
+  booktitle = {Proceedings of the 2017 ACM SIGSAC Conference on Computer and Communications Security},
+  pages = {1375--1388},
+  year = {2017},
+  organization = {ACM}
+}
+
+
+
+%%%%%%%%%%%%%%%
+%% Systems supporting Differential Privacy
+%%%%%%%%%%%%%%%
+
+@inproceedings{Reed:10,
+  title={Differential privacy for collaborative security},
+  author={Reed, Jason and Aviv, Adam J and Wagner, Daniel and Haeberlen, Andreas and Pierce, Benjamin C and Smith, Jonathan M},
+  booktitle={Proceedings of the Third European Workshop on System Security},
+  pages={1--7},
+  year={2010},
+  organization={ACM}
+}
+
+@inproceedings{Haeberlen:11,
+  title={Differential Privacy Under Fire},
+  author={Haeberlen, Andreas and Pierce, Benjamin C and Narayan, Arjun},
+  booktitle={USENIX Security Symposium},
+  year={2011}
+}
+
+@inproceedings{Mohan:12,
+  title={GUPT: privacy preserving data analysis made easy},
+  author={Mohan, Prashanth and Thakurta, Abhradeep and Shi, Elaine and Song, Dawn and Culler, David},
+  booktitle={Proceedings of the 2012 ACM SIGMOD International Conference on Management of Data},
+  pages={349--360},
+  year={2012},
+  organization={ACM}
+}
+
+@article{Tschantz:11,
+  title={Formal verification of differential privacy for interactive systems},
+  author={Tschantz, Michael Carl and Kaynar, Dilsun and Datta, Anupam},
+  journal={Electronic Notes in Theoretical Computer Science},
+  volume={276},
+  pages={61--79},
+  year={2011},
+  publisher={Elsevier}
+}
+
+@inproceedings{Barthe:12,
+  title={Probabilistic relational reasoning for differential privacy},
+  author={Barthe, Gilles and K{\"o}pf, Boris and Olmedo, Federico and Zanella B{\'e}guelin, Santiago},
+  booktitle={ACM SIGPLAN Notices},
+  volume={47},
+  number={1},
+  pages={97--110},
+  year={2012},
+  organization={ACM}
+}
+
+@inproceedings{Ebadi:15,
+  title={Differential privacy: Now it's getting personal},
+  author={Ebadi, Hamid and Sands, David and Schneider, Gerardo},
+  booktitle={ACM SIGPLAN Notices},
+  volume={50},
+  number={1},
+  pages={69--81},
+  year={2015},
+  organization={ACM}
+}
+
+@article{Gaboardi:16,
+  title={PSI ($\{$$\backslash$Psi$\}$): a Private data Sharing Interface},
+  author={Gaboardi, Marco and Honaker, James and King, Gary and Nissim, Kobbi and Ullman, Jonathan and Vadhan, Salil},
+  journal={arXiv preprint arXiv:1609.04340},
+  year={2016}
+}
+
+@article{Barthe:16,
+  title={Programming language techniques for differential privacy},
+  author={Barthe, Gilles and Gaboardi, Marco and Hsu, Justin and Pierce, Benjamin},
+  journal={ACM SIGLOG News},
+  volume={3},
+  number={1},
+  pages={34--53},
+  year={2016},
+  publisher={ACM}
+}
+
+@article{Winograd:17,
+  title={A framework for adaptive differential privacy},
+  author={Winograd-Cort, Daniel and Haeberlen, Andreas and Roth, Aaron and Pierce, Benjamin C},
+  journal={Proceedings of the ACM on Programming Languages},
+  volume={1},
+  number={ICFP},
+  pages={10},
+  year={2017},
+  publisher={ACM}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Social Networks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{Mittal:12,
+  title={Preserving link privacy in social network based systems},
+  author={Mittal, Prateek and Papamanthou, Charalampos and Song, Dawn},
+  journal={arXiv preprint arXiv:1208.6189},
+  year={2012}
+}
+
+@inproceedings{Task:12,
+  title={A guide to differential privacy theory in social network analysis},
+  author={Task, Christine and Clifton, Chris},
+  booktitle={Proceedings of the 2012 International Conference on Advances in Social Networks Analysis and Mining (ASONAM 2012)},
+  pages={411--417},
+  year={2012},
+  organization={IEEE Computer Society}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Mobility
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@inproceedings{Mir:13,
+  title={Dp-where: Differentially private modeling of human mobility},
+  author={Mir, Darakhshan J and Isaacman, Sibren and C{\'a}ceres, Ram{\'o}n and Martonosi, Margaret and Wright, Rebecca N},
+  booktitle={Big Data, 2013 IEEE International Conference on},
+  pages={580--588},
+  year={2013},
+  organization={IEEE}
+}
+
+@article{Ma:13,
+  title={Privacy vulnerability of published anonymous mobility traces},
+  author={Ma, Chris YT and Yau, David KY and Yip, Nung Kwan and Rao, Nageswara SV},
+  journal={IEEE/ACM transactions on networking (TON)},
+  volume={21},
+  number={3},
+  pages={720--733},
+  year={2013},
+  publisher={IEEE Press}
+}
+
+@inproceedings{Chatzikokolakis:14,
+  title={A predictive differentially-private mechanism for mobility traces},
+  author={Chatzikokolakis, Konstantinos and Palamidessi, Catuscia and Stronati, Marco},
+  booktitle={International Symposium on Privacy Enhancing Technologies Symposium},
+  pages={21--41},
+  year={2014},
+  organization={Springer}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Health Care
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{Vu:09,
+  title={Differential privacy for clinical trial data: Preliminary evaluations},
+  author={Vu, Duy and Slavkovic, Aleksandra},
+  booktitle={Data Mining Workshops, 2009. ICDMW'09. IEEE International Conference on},
+  pages={138--143},
+  year={2009},
+  organization={IEEE}
+}
+
+@article{Dankar:13,
+  title={Practicing differential privacy in health care: A review.},
+  author={Dankar, Fida Kamal and El Emam, Khaled},
+  journal={Trans. Data Privacy},
+  volume={6},
+  number={1},
+  pages={35--67},
+  year={2013}
+}
+
+@inproceedings{Tramer:15,
+  title={Differential privacy with bounded priors: reconciling utility and privacy in genome-wide association studies},
+  author={Tram{\`e}r, Florian and Huang, Zhicong and Hubaux, Jean-Pierre and Ayday, Erman},
+  booktitle={Proceedings of the 22nd ACM SIGSAC Conference on Computer and Communications Security},
+  pages={1286--1297},
+  year={2015},
+  organization={ACM}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+@inproceedings{thakurta2013lasso,
+  title={Differentially private feature selection via stability arguments, and the robustness of the lasso},
+  author={Thakurta, Abhradeep Guha and Smith, Adam},
+  booktitle={Conference on Learning Theory},
+  pages={819--850},
+  year={2013}
+}
+@book{sydsaeter:06,
+  title={Mathematics for economic analysis},
+  author={Sydsaeter, Knut},
+  year={2006},
+  publisher={Pearson Education India}
+}
+
+@techreport{Nemirovski2004,
+  Address = {Atlanta, GA},
+  Author = {Arkadi Nemirovski},
+  Institution = {Georgia Institute of Technology},
+  Title = {Interior Point Polynomial Time Methods IN Convex Programming},
+  Number = {ISYE 8813},
+        Month ={Spring},
+  Year = {2004}}
+
+
+%% K-marginals
+@inproceedings{ding:11,
+  title={Differentially private data cubes: optimizing noise sources and consistency},
+  author={Ding, Bolin and Winslett, Marianne and Han, Jiawei and Li, Zhenhui},
+  booktitle={Proceedings of the 2011 ACM SIGMOD International Conference on Management of data},
+  pages={217--228},
+  year={2011},
+  organization={ACM}
+}
+
+@article{dwork:15e,
+  title={Efficient algorithms for privately releasing marginals via convex relaxations},
+  author={Dwork, Cynthia and Nikolov, Aleksandar and Talwar, Kunal},
+  journal={Discrete \& Computational Geometry},
+  volume={53},
+  number={3},
+  pages={650--673},
+  year={2015},
+  publisher={Springer}
+}
+
+@inproceedings{qardaji:14,
+  title={PriView: practical differentially private release of marginal contingency tables},
+  author={Qardaji, Wahbeh and Yang, Weining and Li, Ninghui},
+  booktitle={Proceedings of the 2014 ACM SIGMOD international conference on Management of data},
+  pages={1435--1446},
+  year={2014},
+  organization={ACM}
+}
+%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Misc
+@misc{kaggle,
+  title = {{Kaggle}: Your Home for Data Science},
+  howpublished = {\url{https://www.kaggle.com}}
+}
+
+@inproceedings{backes2016privacy,
+  title={Privacy in Epigenetics: Temporal Linkability of MicroRNA Expression Profiles.},
+  author={Backes, Michael and Berrang, Pascal and Hecksteden, Anna and Humbert, Mathias and Keller, Andreas and Meyer, Tim},
+  booktitle={USENIX Security Symposium},
+  pages={1223--1240},
+  year={2016}
+}
+
+  
+  @inproceedings{chen2012ngrams,
+  title={Differentially private sequential data publication via variable-length n-grams},
+  author={Chen, Rui and Acs, Gergely and Castelluccia, Claude},
+  booktitle={Proceedings of the 2012 ACM conference on Computer and communications security},
+  pages={638--649},
+  year={2012},
+  organization={ACM}
+}
+
+%Bayesian Networks
+@article{heckerman1995learning,
+  title={Learning Bayesian networks: The combination of knowledge and statistical data},
+  author={Heckerman, David and Geiger, Dan and Chickering, David M},
+  journal={Machine learning},
+  volume={20},
+  number={3},
+  pages={197--243},
+  year={1995},
+  publisher={Springer}
+}
+
+@article{he2015dpt,
+  title={Dpt: differentially private trajectory synthesis using hierarchical reference systems},
+  author={He, Xi and Cormode, Graham and Machanavajjhala, Ashwin and Procopiuc, Cecilia M and Srivastava, Divesh},
+  journal={Proceedings of the VLDB Endowment},
+  volume={8},
+  number={11},
+  pages={1154--1165},
+  year={2015},
+  publisher={VLDB Endowment}
+}
+
+@inproceedings{jeung2007mining,
+  title={Mining trajectory patterns using hidden Markov models},
+  author={Jeung, Hoyoung and Shen, Heng Tao and Zhou, Xiaofang},
+  booktitle={DaWaK},
+  volume={7},
+  pages={470},
+  year={2007},
+  organization={Springer}
+}
+
+
+@inproceedings{chen2015differentially,
+  title={Differentially private high-dimensional data publication via sampling-based inference},
+  author={Chen, Rui and Xiao, Qian and Zhang, Yu and Xu, Jianliang},
+  booktitle={Proceedings of the 21th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  pages={129--138},
+  year={2015},
+  organization={ACM}
+}
+
+
+@inproceedings{kasiviswanathan2010price,
+  title={The price of privately releasing contingency tables and the spectra of random matrices with correlated rows},
+  author={Kasiviswanathan, Shiva Prasad and Rudelson, Mark and Smith, Adam and Ullman, Jonathan},
+  booktitle={Proceedings of the forty-second ACM symposium on Theory of computing},
+  pages={775--784},
+  year={2010},
+  organization={ACM}
+}
+
+@inproceedings{li2010optimizing,
+  title={Optimizing linear counting queries under differential privacy},
+  author={Li, Chao and Hay, Michael and Rastogi, Vibhor and Miklau, Gerome and McGregor, Andrew},
+  booktitle={Proceedings of the twenty-ninth ACM SIGMOD-SIGACT-SIGART symposium on Principles of database systems},
+  pages={123--134},
+  year={2010},
+  organization={ACM}
+}
+
+%%% Optimality
+
+@inproceedings{ghosh2009universally,
+  title={Universally utility-maximizing privacy mechanisms},
+  author={Ghosh, Arpita and Roughgarden, Tim and Sundararajan, Mukund},
+  booktitle={Proceedings of the forty-first annual ACM symposium on Theory of computing},
+  pages={351--360},
+  year={2009},
+  organization={ACM}
+}
+
+@article{ghosh2012universally,
+  title={Universally utility-maximizing privacy mechanisms},
+  author={Ghosh, Arpita and Roughgarden, Tim and Sundararajan, Mukund},
+  journal={SIAM Journal on Computing},
+  volume={41},
+  number={6},
+  pages={1673--1693},
+  year={2012},
+  publisher={SIAM}
+}
+
+@inproceedings{brenner2010impossibility,
+  title={Impossibility of differentially private universally optimal mechanisms},
+  author={Brenner, Hai and Nissim, Kobbi},
+  booktitle={Foundations of Computer Science (FOCS), 2010 51st Annual IEEE Symposium on},
+  pages={71--80},
+  year={2010},
+  organization={IEEE}
+}
+
+%%% Sequence
+
+
+@inproceedings{xu2015differentially,
+  title={Differentially private frequent sequence mining via sampling-based candidate pruning},
+  author={Xu, Shengzhi and Su, Sen and Cheng, Xiang and Li, Zhengyi and Xiong, Li},
+  booktitle={International Conference on Data Engineering (ICDE)},
+  year={2015},
+  organization={IEEE}
+}
+
+
+@article{chen2011publishing,
+  title={Publishing set-valued data via differential privacy},
+  author={Chen, Rui and Mohammed, Noman and Fung, Benjamin CM and Desai, Bipin C and Xiong, Li},
+  journal={Proceedings of the VLDB Endowment},
+  year={2011}
+}
+@inproceedings{chen2012differentially,
+  title={Differentially private transit data publication: a case study on the montreal transportation system},
+  author={Chen, Rui and Fung, Benjamin and Desai, Bipin C and Sossou, N{\'e}riah M},
+  booktitle={SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  year={2012},
+  organization={ACM}
+}
+@inproceedings{chen2012ngrams,
+  title={Differentially private sequential data publication via variable-length n-grams},
+  author={Chen, Rui and Acs, Gergely and Castelluccia, Claude},
+  booktitle={{Conference on Computer and Communications Security}},
+  year={2012},
+  organization={ACM}
+}
+%%% Bayesian
+
+@inproceedings{zhang2016privtree,
+  title={Privtree: A differentially private algorithm for hierarchical decompositions},
+  author={Zhang, Jun and Xiao, Xiaokui and Xie, Xing},
+  booktitle={International Conference on Management of Data},
+  year={2016},
+  organization={ACM}
+}
+@inproceedings{zhang2014privbayes,
+  title={Privbayes: Private data release via bayesian networks},
+  author={Zhang, Jun and Cormode, Graham and Procopiuc, Cecilia M and Srivastava, Divesh and Xiao, Xiaokui},
+  booktitle={International Conference on Management of Data},
+  year={2014},
+  organization={ACM}
+}
+
+@inproceedings{lee2017experimental,
+  title={An Experimental Analysis of Anytime Algorithms for Bayesian Network Structure Learning},
+  author={Lee, Colin and van Beek, Peter},
+  booktitle={Advanced Methodologies for Bayesian Networks},
+  year={2017}
+}
+
+@article{schwarz1978estimating,
+  title={Estimating the dimension of a model},
+  author={Schwarz, Gideon and others},
+  journal={The annals of statistics},
+  volume={6},
+  number={2},
+  pages={461--464},
+  year={1978},
+  publisher={Institute of Mathematical Statistics}
+}
+
+%%% URL
+
+@misc{apple,
+author={Apple},
+title={Differential Privacy Overview},
+howpublished="\url{https://images.apple.com/privacy/docs/Differential_Privacy_Overview.pdf}",
+year={2017}
+}
+
+%%% Adaptive
+@inproceedings{bassily2016algorithmic,
+  title={Algorithmic stability for adaptive data analysis},
+  author={Bassily, Raef and Nissim, Kobbi and Smith, Adam and Steinke, Thomas and Stemmer, Uri and Ullman, Jonathan},
+  booktitle={Proceedings of the 48th Annual ACM SIGACT Symposium on Theory of Computing},
+  pages={1046--1059},
+  year={2016},
+  organization={ACM}
+}
+@inproceedings{blum2015ladder,
+  title={The ladder: A reliable leaderboard for machine learning competitions},
+  author={Blum, Avrim and Hardt, Moritz},
+  booktitle={International Conference on Machine Learning},
+  pages={1006--1014},
+  year={2015}
+}
+
+
+
+
+@article{xiao2011differential,
+  title={Differential privacy via wavelet transforms},
+  author={Xiao, Xiaokui and Wang, Guozhang and Gehrke, Johannes},
+  journal={IEEE Transactions on Knowledge and Data Engineering},
+  volume={23},
+  number={8},
+  pages={1200--1214},
+  year={2011},
+  publisher={IEEE}
+}
+
+@article{dwork2015efficient,
+  title={Efficient algorithms for privately releasing marginals via convex relaxations},
+  author={Dwork, Cynthia and Nikolov, Aleksandar and Talwar, Kunal},
+  journal={Discrete \& Computational Geometry},
+  volume={53},
+  number={3},
+  pages={650--673},
+  year={2015},
+  publisher={Springer}
+}
+
+@inproceedings{ganti2008poolview,
+  title={PoolView: stream privacy for grassroots participatory sensing},
+  author={Ganti, Raghu K and Pham, Nam and Tsai, Yu-En and Abdelzaher, Tarek F},
+  booktitle={Proceedings of the 6th ACM conference on Embedded network sensor systems},
+  pages={281--294},
+  year={2008},
+  organization={ACM}
+}
+
+
+% ------------------
+% Algorithms (data dependent)
+% ------------------
+
+% MWEM
+@inproceedings{hardt:12,
+  title={A simple and practical algorithm for differentially private data release},
+  author={Hardt, Moritz and Ligett, Katrina and McSherry, Frank},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={2339--2347},
+  year={2012}
+}
+
+% DPcube
+@article{xiao:14,
+  title={DPCube: Differentially Private Histogram Release through Multidimensional Partitioning},
+  author={Xiao, Yonghui and Xiong, Li and Fan, Liyue and Goryczka, Slawomir and others},
+  year={2014},
+  publisher={Citeseer}
+}
+
+% QuadTree
+@inproceedings{cormode:12,
+  title={Differentially private spatial decompositions},
+  author={Cormode, Graham and Procopiuc, Cecilia and Srivastava, Divesh and Shen, Entong and Yu, Ting},
+  booktitle={Data engineering (ICDE), 2012 IEEE 28th international conference on},
+  pages={20--31},
+  year={2012},
+  organization={IEEE}
+}
+
+% PHP, EFPA
+@inproceedings{acs:12,
+  title={Differentially private histogram publishing through lossy compression},
+  author={Acs, Gergely and Castelluccia, Claude and Chen, Rui},
+  booktitle={Data Mining (ICDM), 2012 IEEE 12th International Conference on},
+  pages={1--10},
+  year={2012},
+  organization={IEEE}
+}
+
+% AGrid, UGrid
+@inproceedings{qardaji:13,
+  title={Differentially private grids for geospatial data},
+  author={Qardaji, Wahbeh and Yang, Weining and Li, Ninghui},
+  booktitle={Data Engineering (ICDE), 2013 IEEE 29th International Conference on},
+  pages={757--768},
+  year={2013},
+  organization={IEEE}
+}
+
+% SF
+@article{xu:13,
+  title={Differentially private histogram publication},
+  author={Xu, Jia and Zhang, Zhenjie and Xiao, Xiaokui and Yang, Yin and Yu, Ge and Winslett, Marianne},
+  journal={The VLDB Journal},
+  volume={22},
+  number={6},
+  pages={797--822},
+  year={2013},
+  publisher={Springer}
+}
+
+% APH
+@inproceedings{zhang:14,
+  title={Towards accurate histogram publication under differential privacy},
+  author={Zhang, Xiaojian and Chen, Rui and Xu, Jianliang and Meng, Xiaofeng and Xie, Yingtao},
+  booktitle={Proceedings of the 2014 SIAM International Conference on Data Mining},
+  pages={587--595},
+  year={2014},
+  organization={SIAM}
+}
+
+
+% DAWA
+@article{li:14,
+  title={A data-and workload-aware algorithm for range queries under differential privacy},
+  author={Li, Chao and Hay, Michael and Miklau, Gerome and Wang, Yue},
+  journal={Proceedings of the VLDB Endowment},
+  volume={7},
+  number={5},
+  pages={341--352},
+  year={2014},
+  publisher={VLDB Endowment}
+}
+
+
+%%histogram
+@inproceedings{hay2016principled,
+  title={Principled evaluation of differentially private algorithms using dpbench},
+  author={Hay, Michael and Machanavajjhala, Ashwin and Miklau, Gerome and Chen, Yan and Zhang, Dan},
+  booktitle={Proceedings of the 2016 International Conference on Management of Data},
+  pages={139--154},
+  year={2016},
+  organization={ACM}
+}
+@article{xu2013differentially,
+  title={Differentially private histogram publication},
+  author={Xu, Jia and Zhang, Zhenjie and Xiao, Xiaokui and Yang, Yin and Yu, Ge and Winslett, Marianne},
+  journal={The VLDB Journal},
+  volume={22},
+  number={6},
+  pages={797--822},
+  year={2013},
+  publisher={Springer}
+}
+
+%%% DP in interactive settings
+@article{johnson1towards,
+  title={Towards Practical Differential Privacy for SQL Queries},
+  author={Johnson, Noah and Near, Joseph P and Song, Dawn},
+  year={2017}
+}
+@article{dankar2013practicing,
+  title={Practicing differential privacy in health care: A review.},
+  author={Dankar, Fida Kamal and El Emam, Khaled},
+  journal={Trans. Data Privacy},
+  volume={6},
+  number={1},
+  pages={35--67},
+  year={2013}
+}
+
+@inproceedings{nissim2007smooth,
+  title={Smooth sensitivity and sampling in private data analysis},
+  author={Nissim, Kobbi and Raskhodnikova, Sofya and Smith, Adam},
+  booktitle={Proceedings of the thirty-ninth annual ACM symposium on Theory of computing},
+  pages={75--84},
+  year={2007},
+  organization={ACM}
+}
+
+@inproceedings{hsu2016jointly,
+  title={Jointly private convex programming},
+  author={Hsu, Justin and Huang, Zhiyi and Roth, Aaron and Wu, Zhiwei Steven},
+  booktitle={Proceedings of the Twenty-Seventh Annual ACM-SIAM Symposium on Discrete Algorithms},
+  pages={580--599},
+  year={2016},
+  organization={Society for Industrial and Applied Mathematics}
+}
+
+@inproceedings{dwork2009differential,
+  title={Differential privacy and robust statistics},
+  author={Dwork, Cynthia and Lei, Jing},
+  booktitle={Proceedings of the forty-first annual ACM symposium on Theory of computing},
+  pages={371--380},
+  year={2009},
+  organization={ACM}
+}
+@inproceedings{roth2010interactive,
+  title={Interactive privacy via the median mechanism},
+  author={Roth, Aaron and Roughgarden, Tim},
+  booktitle={Proceedings of the forty-second ACM symposium on Theory of computing},
+  pages={765--774},
+  year={2010},
+  organization={ACM}
+}
+
+@inproceedings{hardt2010multiplicative,
+  title={A multiplicative weights mechanism for privacy-preserving data analysis},
+  author={Hardt, Moritz and Rothblum, Guy N},
+  booktitle={Foundations of Computer Science},
+  year={2010},
+  organization={IEEE}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Frameworks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{kotsogiannis:17,
+  title={Pythia: Data dependent differentially private algorithm selection},
+  author={Kotsogiannis, Ios and Machanavajjhala, Ashwin and Hay, Michael and Miklau, Gerome},
+  booktitle={Proceedings of the 2017 ACM International Conference on Management of Data},
+  pages={1323--1337},
+  year={2017},
+  organization={ACM}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Deployed solutions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@article{fanti:16,
+  title={Building a RAPPOR with the unknown: Privacy-preserving learning of associations and data dictionaries},
+  author={Fanti, Giulia and Pihur, Vasyl and Erlingsson, {\'U}lfar},
+  journal={Proceedings on Privacy Enhancing Technologies},
+  volume={2016},
+  number={3},
+  pages={41--61},
+  year={2016}
+}
+
+@article{greenberg:16,
+  title={Apple’s ‘differential privacy’is about collecting your data—but not your data},
+  author={Greenberg, Andy},
+  journal={Wired, June},
+  year={2016}
+}
+
+@article{tang:17,
+  title={Privacy Loss in Apple's Implementation of Differential Privacy on MacOS 10.12},
+  author={Tang, Jun and Korolova, Aleksandra and Bai, Xiaolong and Wang, Xueqiang and Wang, Xiaofeng},
+  journal={arXiv preprint arXiv:1709.02753},
+  year={2017}
+}
+
+
+@article{hu:15,
+  title={Differential privacy in telco big data platform},
+  author={Hu, Xueyang and Yuan, Mingxuan and Yao, Jianguo and Deng, Yu and Chen, Lei and Yang, Qiang and Guan, Haibing and Zeng, Jia},
+  journal={Proceedings of the VLDB Endowment},
+  volume={8},
+  number={12},
+  pages={1692--1703},
+  year={2015},
+  publisher={VLDB Endowment}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Social Networks
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@inproceedings{gross:05,
+  title={Information revelation and privacy in online social networks},
+  author={Gross, Ralph and Acquisti, Alessandro},
+  booktitle={Proceedings of the 2005 ACM workshop on Privacy in the electronic society},
+  pages={71--80},
+  year={2005},
+  organization={ACM}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Transportation
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@article{TS2017,
+  author    = {Arthur Maheo and Phlip Kilby and Pascal {Van~Hentenryck}},
+  title     = "{Benders Decomposition for the Design of a Hub and Shuttle Public Transit System.}",
+  journal   = {Transportation Science},
+  volume    = {},
+  year      = {2017},
+  pages     = {},
+  Note      = {To appear},
+}
+
+@misc{DOT_people_travel_less,
+  title = {{US} Dept of Transport},
+  howpublished = {\url{https://www.fhwa.dot.gov/policyinformation/travel_monitoring/tvt.cfm}},
+  note = {Accessed: 2017-07-20}
+}
+
+@article{de2013unique,
+  title={Unique in the crowd: The privacy bounds of human mobility},
+  author={{De Montjoye}, Yves-Alexandre and Hidalgo, C{\'e}sar A and Verleysen, Michel and Blondel, Vincent D},
+  journal={Scientific reports},
+  volume={3},
+  pages={1376},
+  year={2013},
+  publisher={Nature Publishing Group}
+}
+
+
+@article{jain:11,
+  title={Large neighborhood search for dial-a-ride problems},
+  author={Jain, Siddhartha and {Hentenryck}, Pascal},
+  journal={Principles and Practice of Constraint Programming--CP 2011},
+  pages={400--413},
+  year={2011},
+  publisher={Springer}
+}
+
+@article{cordeau:03,
+  title={A tabu search heuristic for the static multi-vehicle dial-a-ride problem},
+  author={Cordeau, Jean-Fran{\c{c}}ois and Laporte, Gilbert},
+  journal={Transportation Research Part B: Methodological},
+  volume={37},
+  number={6},
+  pages={579--594},
+  year={2003},
+  publisher={Elsevier}
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% K-Anonymity
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@article{sweeney:02,
+  title={k-anonymity: A model for protecting privacy},
+  author={Sweeney, Latanya},
+  journal={International Journal of Uncertainty, Fuzziness and Knowledge-Based Systems},
+  volume={10},
+  number={05},
+  pages={557--570},
+  year={2002},
+  publisher={World Scientific}
+}
+
+
+@inproceedings{shokri:10,
+  title={Unraveling an old cloak: k-anonymity for location privacy},
+  author={Shokri, Reza and Troncoso, Carmela and Diaz, Claudia and Freudiger, Julien and Hubaux, Jean-Pierre},
+  booktitle={Proceedings of the 9th annual ACM workshop on Privacy in the electronic society},
+  pages={115--118},
+  year={2010},
+  organization={ACM}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Differential Privacy (Theory)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+@inproceedings{mcsherry:07,
+  title={Mechanism design via differential privacy},
+  author={McSherry, Frank and Talwar, Kunal},
+  booktitle={Foundations of Computer Science, 2007. FOCS'07. 48th Annual IEEE Symposium on},
+  pages={94--103},
+  year={2007},
+  organization={IEEE}
+}
+
+@inproceedings{li:11,
+  title={Compressive mechanism: Utilizing sparse representation in differential privacy},
+  author={Li, Yang D and Zhang, Zhenjie and Winslett, Marianne and Yang, Yin},
+  booktitle={Proceedings of the 10th annual ACM workshop on Privacy in the electronic society},
+  pages={177--182},
+  year={2011},
+  organization={ACM}
+}
+
+@incollection{vadhan:17,
+  title={The complexity of differential privacy},
+  author={Vadhan, Salil},
+  booktitle={Tutorials on the Foundations of Cryptography},
+  pages={347--450},
+  year={2017},
+  publisher={Springer}
+}
+
+
+% Lipschitz privacy
+@article{koufogiannis:15,
+  title={Optimality of the laplace mechanism in differential privacy},
+  author={Koufogiannis, Fragkiskos and Han, Shuo and Pappas, George J},
+  journal={arXiv preprint arXiv:1504.00065},
+  year={2015}
+}
+
+@inproceedings{dwork:06,
+  title={Calibrating noise to sensitivity in private data analysis},
+  author={Dwork, Cynthia and McSherry, Frank and Nissim, Kobbi and Smith, Adam},
+  booktitle={TCC},
+  volume={3876},
+  pages={265--284},
+  year={2006},
+  organization={Springer}
+}
+
+@article{dwork:13,
+  title={The algorithmic foundations of differential privacy},
+  author={Dwork, Cynthia and Roth, Aaron},
+  journal={Theoretical Computer Science},
+  volume={9},
+  number={3-4},
+  pages={211--407},
+  year={2013}
+}
+
+@inproceedings{cormode2012differentially,
+  title={Differentially private spatial decompositions},
+  author={Cormode, Graham and Procopiuc, Cecilia and Srivastava, Divesh and Shen, Entong and Yu, Ting},
+  booktitle={Data engineering (ICDE), 2012 IEEE 28th international conference on},
+  pages={20--31},
+  year={2012},
+  organization={IEEE}
+}
+@inproceedings{hardt2012simple,
+  title={A simple and practical algorithm for differentially private data release},
+  author={Hardt, Moritz and Ligett, Katrina and McSherry, Frank},
+  booktitle={NIPS},
+  year={2012}
+}
+
+@article{cormode:11,
+  title={Differentially private publication of sparse data},
+  author={Cormode, Graham and Procopiuc, Magda and Srivastava, Divesh and Tran, Thanh TL},
+  journal={arXiv preprint arXiv:1103.0825},
+  year={2011}
+}
+
+
+@article{qardaji:13,
+  title={Understanding hierarchical methods for differentially private histograms},
+  author={Qardaji, Wahbeh and Yang, Weining and Li, Ninghui},
+  journal={Proceedings of the VLDB Endowment},
+  volume={6},
+  number={14},
+  pages={1954--1965},
+  year={2013},
+  publisher={VLDB Endowment},
+  url={http://www.vldb.org/pvldb/vol6/p1954-qardaji.pdf}
+}
+
+@inproceedings{dwork:10,
+  title={Differential privacy under continual observation},
+  author={Dwork, Cynthia and Naor, Moni and Pitassi, Toniann and Rothblum, Guy N},
+  booktitle={Proceedings of the forty-second ACM symposium on Theory of computing},
+  pages={715--724},
+  year={2010},
+  organization={ACM}
+}
+@article{shiva:08,
+  author    = {Shiva Prasad Kasiviswanathan and
+               Adam D. Smith},
+  title     = {A Note on Differential Privacy: Defining Resistance to Arbitrary Side Information},
+  journal   = {CoRR},
+  volume    = {abs/0803.3946},
+  year      = {2008},
+  url       = {http://arxiv.org/abs/0803.3946},
+  timestamp = {Fri, 08 Apr 2016 07:34:30 +0200},
+  biburl    = {http://dblp.uni-trier.de/rec/bib/journals/corr/abs-0803-3946},
+  bibsource = {dblp computer science bibliography, http://dblp.org}
+}
+
+@article{zhang:17,
+  title={Cost-friendly differential privacy for smart meters: exploiting the dual roles of the noise},
+  author={Zhang, Zijian and Qin, Zhan and Zhu, Liehuang and Weng, Jian and Ren, Kui},
+  journal={IEEE Transactions on Smart Grid},
+  volume={8},
+  number={2},
+  pages={619--626},
+  year={2017},
+  publisher={IEEE}
+}
+
+@inproceedings{rogers:16,
+  title={Privacy odometers and filters: Pay-as-you-go composition},
+  author={Rogers, Ryan M and Roth, Aaron and Ullman, Jonathan and Vadhan, Salil},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={1921--1929},
+  year={2016}
+}
+@inproceedings{xiao2010differentially,
+  title={Differentially private data release through multidimensional partitioning},
+  author={Xiao, Yonghui and Xiong, Li and Yuan, Chun},
+  booktitle={Workshop on Secure Data Management},
+  pages={150--168},
+  year={2010},
+  organization={Springer}
+}
+
+@misc{sofyatalk,
+	title={Differential Privacy for Graphs and Social Networks},
+	author={Sofya Raskhodnikova},
+	year={2014},
+	url={https://simons.berkeley.edu/sites/default/files/docs/1121/raskhodnikovaslides.pdf}
+}
+@article{karwa2011private,
+  title={Private analysis of graph structure},
+  author={Karwa, Vishesh and Raskhodnikova, Sofya and Smith, Adam and Yaroslavtsev, Grigory},
+  journal={Proceedings of the VLDB Endowment},
+  volume={4},
+  number={11},
+  pages={1146--1157},
+  year={2011}
+}
+@inproceedings{lu2014exponential,
+  title={Exponential random graph estimation under differential privacy},
+  author={Lu, Wentian and Miklau, Gerome},
+  booktitle={Proceedings of the 20th ACM SIGKDD international conference on Knowledge discovery and data mining},
+  pages={921--930},
+  year={2014},
+  organization={ACM}
+}
+@inproceedings{upadhyay2013random,
+  title={Random projections, graph sparsification, and differential privacy},
+  author={Upadhyay, Jalaj},
+  booktitle={International Conference on the Theory and Application of Cryptology and Information Security},
+  pages={276--295},
+  year={2013},
+  organization={Springer}
+}
+
+@incollection{kasiviswanathan2013analyzing,
+  title={Analyzing graphs with node differential privacy},
+  author={Kasiviswanathan, Shiva Prasad and Nissim, Kobbi and Raskhodnikova, Sofya and Smith, Adam},
+  booktitle={Theory of Cryptography},
+  pages={457--476},
+  year={2013},
+  publisher={Springer}
+}
+@inproceedings{zhao2014achieving,
+  title={Achieving differential privacy of data disclosure in the smart grid},
+  author={Zhao, Jing and Jung, Taeho and Wang, Yu and Li, Xiangyang},
+  booktitle={INFOCOM, 2014 Proceedings IEEE},
+  pages={504--512},
+  year={2014},
+  organization={IEEE}
+}
+@inproceedings{haeberlen2011differential,
+  title={Differential Privacy Under Fire.},
+  author={Haeberlen, Andreas and Pierce, Benjamin C and Narayan, Arjun},
+  booktitle={USENIX Security Symposium},
+  year={2011}
+}
+
+@inproceedings{hsu2014differential,
+  title={Differential privacy: An economic method for choosing epsilon},
+  author={Hsu, Justin and Gaboardi, Marco and Haeberlen, Andreas and Khanna, Sanjeev and Narayan, Arjun and Pierce, Benjamin C and Roth, Aaron},
+  booktitle={Computer Security Foundations Symposium (CSF), 2014 IEEE 27th},
+  pages={398--410},
+  year={2014},
+  organization={IEEE}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Privacy vs Utility
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@inproceedings{brickell2008cost,
+  title={The cost of privacy: destruction of data-mining utility in anonymized data publishing},
+  author={Brickell, Justin and Shmatikov, Vitaly},
+  booktitle={Proceedings of the 14th ACM SIGKDD international conference on Knowledge discovery and data mining},
+  pages={70--78},
+  year={2008},
+  organization={ACM}
+}
+
+@article{li:14,
+  title={A data-and workload-aware algorithm for range queries under differential privacy},
+  author={Li, Chao and Hay, Michael and Miklau, Gerome and Wang, Yue},
+  journal={Proceedings of the VLDB Endowment},
+  volume={7},
+  number={5},
+  pages={341--352},
+  year={2014},
+  publisher={VLDB Endowment}
+}
+
+@inproceedings{huang:15,
+  title={Orthogonal mechanism for answering batch queries with differential privacy},
+  author={Huang, Dong and Han, Shuguo and Li, Xiaoli and Yu, Philip S},
+  booktitle={Proceedings of the 27th International Conference on Scientific and Statistical Database Management},
+  pages={24},
+  year={2015},
+  organization={ACM}
+}
+
+
+@inproceedings{li:09,
+  title={On the tradeoff between privacy and utility in data publishing},
+  author={Li, Tiancheng and Li, Ninghui},
+  booktitle={Proceedings of the 15th ACM SIGKDD international conference on Knowledge discovery and data mining},
+  pages={517--526},
+  year={2009},
+  organization={ACM}
+}
+
+
+% METRIC DP
+
+@article{olteanu2017quantifying,
+  title={Quantifying interdependent privacy risks with location data},
+  author={Olteanu, Alexandra-Mihaela and Huguenin, K{\'e}vin and Shokri, Reza and Humbert, Mathias and Hubaux, Jean-Pierre},
+  journal={IEEE Transactions on Mobile Computing},
+  volume={16},
+  number={3},
+  pages={829--842},
+  year={2017},
+  publisher={IEEE}
+}
+
+@article{shokri2014hiding,
+  title={Hiding in the mobile crowd: Locationprivacy through collaboration},
+  author={Shokri, Reza and Theodorakopoulos, George and Papadimitratos, Panos and Kazemi, Ehsan and Hubaux, Jean-Pierre},
+  journal={IEEE Transactions on Dependable and Secure Computing},
+  volume={11},
+  number={3},
+  pages={266--279},
+  year={2014},
+  publisher={IEEE}
+}
+
+@inproceedings{mir2013dp,
+  title={Dp-where: Differentially private modeling of human mobility},
+  author={Mir, Darakhshan J and Isaacman, Sibren and C{\'a}ceres, Ram{\'o}n and Martonosi, Margaret and Wright, Rebecca N},
+  booktitle={Big Data, 2013 IEEE International Conference on},
+  pages={580--588},
+  year={2013},
+  organization={IEEE}
+}
+
+@inproceedings{chatzikokolakis2014predictive,
+  title={A predictive differentially-private mechanism for mobility traces},
+  author={Chatzikokolakis, Konstantinos and Palamidessi, Catuscia and Stronati, Marco},
+  booktitle={International Symposium on Privacy Enhancing Technologies Symposium},
+  pages={21--41},
+  year={2014},
+  organization={Springer}
+}
+
+@inproceedings{fawaz2014location,
+  title={Location privacy protection for smartphone users},
+  author={Fawaz, Kassem and Shin, Kang G},
+  booktitle={Proceedings of the 2014 ACM SIGSAC Conference on Computer and Communications Security},
+  pages={239--250},
+  year={2014},
+  organization={ACM}
+}
+@inproceedings{andres2013geo,
+  title={Geo-indistinguishability: Differential privacy for location-based systems},
+  author={Andr{\'e}s, Miguel E and Bordenabe, Nicol{\'a}s E and Chatzikokolakis, Konstantinos and Palamidessi, Catuscia},
+  booktitle={Proceedings of the 2013 ACM SIGSAC conference on Computer \& communications security},
+  pages={901--914},
+  year={2013},
+  organization={ACM}
+}
+
+
+@article{hay2010boosting,
+  title={Boosting the accuracy of differentially private histograms through consistency},
+  author={Hay, Michael and Rastogi, Vibhor and Miklau, Gerome and Suciu, Dan},
+  journal={Proceedings of the VLDB Endowment},
+  volume={3},
+  number={1-2},
+  pages={1021--1032},
+  year={2010},
+  publisher={VLDB Endowment}
+}
+
+
+
+@inproceedings{chatzikokolakis2013broadening,
+  title={Broadening the scope of differential privacy using metrics},
+  author={Chatzikokolakis, Konstantinos and Andr{\'e}s, Miguel E and Bordenabe, Nicol{\'a}s Emilio and Palamidessi, Catuscia},
+  booktitle={International Symposium on Privacy Enhancing Technologies Symposium},
+  pages={82--102},
+  year={2013},
+  organization={Springer}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# Differential Privacy - Synthetic Data release 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+@inproceedings{mohammed:11,
+  title={Differentially private data release for data mining},
+  author={Mohammed, Noman and Chen, Rui and Fung, Benjamin and Yu, Philip S},
+  booktitle={Proceedings of the 17th ACM SIGKDD international conference on Knowledge discovery and data mining},
+  pages={493--501},
+  year={2011},
+  organization={ACM}
+}
+
+
+@inproceedings{dwork:10b,
+  title={Boosting and differential privacy},
+  author={Dwork, Cynthia and Rothblum, Guy N and Vadhan, Salil},
+  booktitle={Foundations of Computer Science (FOCS), 2010 51st Annual IEEE Symposium on},
+  pages={51--60},
+  year={2010},
+  organization={IEEE}
+}
+
+
+@article{blum:13,
+  title={A learning theory approach to noninteractive database privacy},
+  author={Blum, Avrim and Ligett, Katrina and Roth, Aaron},
+  journal={Journal of the ACM (JACM)},
+  volume={60},
+  number={2},
+  pages={12},
+  year={2013},
+  publisher={ACM}
+}
+
+@article{kasiviswanathan:11,
+  title={What can we learn privately?},
+  author={Kasiviswanathan, Shiva Prasad and Lee, Homin K and Nissim, Kobbi and Raskhodnikova, Sofya and Smith, Adam},
+  journal={SIAM Journal on Computing},
+  volume={40},
+  number={3},
+  pages={793--826},
+  year={2011},
+  publisher={SIAM}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+# Location Prediction
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+@article{beresford:03,
+  title={Location privacy in pervasive computing},
+  author={Beresford, Alastair R and Stajano, Frank},
+  journal={IEEE Pervasive computing},
+  volume={2},
+  number={1},
+  pages={46--55},
+  year={2003},
+  publisher={IEEE}
+}
+
+@article{gruteser:04,
+  title={Protecting privacy, in continuous location-tracking applications},
+  author={Gruteser, Marco and Liu, Xuan},
+  journal={IEEE Security \& Privacy},
+  volume={2},
+  number={2},
+  pages={28--34},
+  year={2004},
+  publisher={IEEE}
+}
+
+@article{krumm:09,
+  title={A survey of computational location privacy},
+  author={Krumm, John},
+  journal={Personal and Ubiquitous Computing},
+  volume={13},
+  number={6},
+  pages={391--399},
+  year={2009},
+  publisher={Springer}
+}
+
+
+@article{anagnostopoulos2012efficient,
+  title={Efficient location prediction in mobile cellular networks},
+  author={Anagnostopoulos, Theodore and Anagnostopoulos, Christos and Hadjiefthymiades, Stathes},
+  journal={International Journal of Wireless Information Networks},
+  volume={19},
+  number={2},
+  pages={97--111},
+  year={2012},
+  publisher={Springer}
+}
+
+@inproceedings{anagnostopoulos2009predicting,
+  title={Predicting the location of mobile users: a machine learning approach},
+  author={Anagnostopoulos, Theodoros and Anagnostopoulos, Christos and Hadjiefthymiades, Stathes and Kyriakakos, Miltos and Kalousis, Alexandros},
+  booktitle={Proceedings of the 2009 international conference on Pervasive services},
+  pages={65--72},
+  year={2009},
+  organization={ACM}
+}
+
+@article{gonzalez:08,
+  title={Understanding individual human mobility patterns},
+  author={Gonz{\'a}lez, Marta C and Hidalgo, C{\'e}sar A and Barab{\'a}si, Albert-L{\'a}szl{\'o}},
+  journal={Nature},
+  volume={453},
+  number={7196},
+  pages={779--782},
+  year={2008},
+  publisher={Nature Publishing Group}
+}
+
+@article{dwork2011firm,
+  title={A firm foundation for private data analysis},
+  author={Dwork, Cynthia},
+  journal={Communications of the ACM},
+  volume={54},
+  number={1},
+  pages={86--95},
+  year={2011},
+  publisher={ACM}
+}
+@article{ligett2017accuracy,
+  title={Accuracy First: Selecting a Differential Privacy Level for Accuracy-Constrained ERM},
+  author={Ligett, Katrina and Neel, Seth and Roth, Aaron and Waggoner, Bo and Wu, Z Steven},
+  journal={arXiv preprint arXiv:1705.10829},
+  year={2017}
+}
+@inproceedings{narayanan2008robust,
+  title={Robust de-anonymization of large sparse datasets},
+  author={Narayanan, Arvind and Shmatikov, Vitaly},
+  booktitle={Security and Privacy, 2008. SP 2008. IEEE Symposium on},
+  pages={111--125},
+  year={2008},
+  organization={IEEE}
+}
+
+%%%%%%%%%%%%%
+%% Elasticity
+%%%%%%%%%%%%%%
+@book{sydsaeter:06,
+  title={Mathematics for economic analysis},
+  author={Sydsaeter, Knut},
+  year={2006},
+  publisher={Pearson Education India}
+}

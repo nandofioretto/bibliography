@@ -129,9 +129,6 @@
 
 ## Other resources
 
-### Tutorials
-- [Moritz Hardt's tutorial on fairness](http://mrtz.org/nips17/#/)
-
 ### Video Lectures
 [-] [Turing Lecture: Privacy-Preserving Data Analysis - Cynthia Dwork](https://www.youtube.com/watch?v=vsA4w3itxA0) YouTube video
 - [Challenges in Ethics and Computing” at ACM Turing 50 Celebration](https://www.youtube.com/watch?v=Z45LI-NyLP0) YouTube video

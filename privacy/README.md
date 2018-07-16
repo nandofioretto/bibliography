@@ -527,7 +527,6 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	_Darakhshan Mir, S. Muthukrishnan, Aleksandar Nikolov, Rebecca N. Wright (PODS 2011)_
 
 	>_Consider fully dynamic data, where we track data as it gets inserted and deleted. There are well developed notions of private data analyses with dynamic data, for example, using differential privacy. We want to go beyond privacy, and consider privacy together with security, formulated recently as pan-privacy by Dwork et al. (ICS 2010). Informally, pan-privacy preserves differential privacy while computing desired statistics on the data, even if the internal memory of the algorithm is compromised (say, by a malicious break-in or insider curiosity or by fiat by the government or law).
-
 	We study pan-private algorithms for basic analyses, like estimating distinct count, moments, and heavy hitter count, with fully dynamic data. We present the first known pan-private algorithms for these problems in the fully dynamic model. Our algorithms rely on sketching techniques popular in streaming: in some cases, we add suitable noise to a previously known sketch, using a novel approach of calibrating noise to the underlying problem structure and the projection matrix of the sketch; in other cases, we maintain certain statistics on sketches; in yet others, we define novel sketches. We also present the first known lower bounds explicitly for pan privacy, showing our results to be nearly optimal for these problems. Our lower bounds are stronger than those implied by differential privacy or dynamic data streaming alone and hold even if unbounded memory and/or unbounded processing time are allowed. The lower bounds use a noisy decoding argument and exploit a connection between pan-private algorithms and data sanitization._
 
 - Private and Continual Release of Statistics
@@ -665,6 +664,15 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	_Matthew Joseph, Aaron Roth, Jonathan Ullman, Bo Waggoner (2018)_
     
     >_There are now several large scale deployments of differential privacy used to track statistical information about users. However, these systems periodically recollect the data and recompute the statistics using algorithms designed for a single use and as a result do not provide meaningful privacy guarantees over long time scales. Moreover, existing techniques to mitigate this effect do not apply in the “local” model of differential privacy that these systems use. In this paper, we introduce a new local differential privacy technique to maintain persistently up-to-date statistics over time, with privacy guarantees scaling only with the number of changes in the underlying distribution rather than the number of collection periods. The key ideas include batching time into epochs—varying the epoch size allows us to trade off accuracy against frequency of updates—and a protocol for users to “vote” to update out-of-date statistics while losing very little privacy. We prove our main results for the setting where users hold a single bit, redrawn at every time period, from a common (but changing) distribution; however, our framework is quite general and we give an application to frequency and heavy-hitter estimation._
+
+- Efficient data perturbation for privacy preserving and accurate data stream
+mining
+	<a name="Chamikara:18"></a>
+	[[Paper]](https://ac.els-cdn.com/S1574119217305229/1-s2.0-S1574119217305229-main.pdf?_tid=1f7df936-8ab8-4aba-8e9b-e2a8bca2ea95&acdnat=1526735374_b6e4b93bca41a9b110e39dcbfc99c214)
+
+	_M.A.P. Chamikara, P. Bertok, D. Liu, S. Camtepe, I. Khalil (Pervasive and Mobile Computing 2018)_
+
+	>_The widespread use of the Internet of Things (IoT) has raised many concerns, among them the protection of private information. Existing privacy preservation methods cannot provide a good balance between data utility and privacy, and also have problems with efficiency and scalability. This paper proposes an efficient data stream perturbation method (named as P2RoCAl). P2RoCAl delivers better data utility compared to its contenders, classification accuracies of P2RoCAl perturbed data streams are very close to those of original data streams. P2RoCAl also provides higher resilience against data reconstruction attacks._
 
 
 #### Other Resources

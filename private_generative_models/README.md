@@ -46,7 +46,8 @@ Last update: Jun 16, 2018
     
     >_Preserving the utility of published datasets while simultaneously providing provable privacy guarantees is a well-known challenge. On the one hand, context-free privacy solutions, such as differential privacy, provide strong privacy guarantees, but often lead to a significant reduction in utility. On the other hand, context-aware privacy solutions, such as information theoretic privacy, achieve an improved privacy-utility tradeoff, but assume that the data holder has access to dataset statistics. We circumvent these limitations by introducing a novel context-aware privacy framework called generative adversarial privacy (GAP). GAP leverages recent advancements in generative adversarial networks (GANs) to allow the data holder to learn privatization schemes from the dataset itself. Under GAP, learning the privacy mechanism is formulated as a constrained minimax game between two players: a privatizer that sanitizes the dataset in a way that limits the risk of inference attacks on the individuals' private variables, and an adversary that tries to infer the private variables from the sanitized dataset. To evaluate GAP's performance, we investigate two simple (yet canonical) statistical dataset models: (a) the binary data model, and (b) the binary Gaussian mixture model. For both models, we derive game-theoretically optimal minimax privacy mechanisms, and show that the privacy mechanisms learned from data (in a generative adversarial fashion) match the theoretically optimal ones. This demonstrates that our framework can be easily applied in practice, even in the absence of dataset statistics._
 
-    >Note: This is a very interesting paper showcasing the use of MI for protecting private attributes.
+    [Comments]: 
+    - This is a very interesting paper showcasing the use of MI for protecting private attributes.
 
 
 - Differentially Private Generative Adversarial Network
@@ -66,7 +67,7 @@ Last update: Jun 16, 2018
     
     >_In this paper, we present a technique for generating artificial datasets that retain statistical properties of the real data while providing differential privacy guarantees with respect to this data. We include a Gaussian noise layer in the discriminator of a generative adversarial network to make the output and the gradients differentially private with respect to the training data, and then use the generator component to synthesise privacy-preserving artificial dataset. Our experiments show that under a reasonably small privacy budget we are able to generate data of high quality and successfully train machine learning models on this artificial data._
 
-    >[Comments]:
+    [Comments]:
     - This is a rejected paper from ICLR 2018.
     - A new version was just (Jun, 4, 2018) deposited to the ArXiv. It seems that there was an error with the generation process and thus the whole data-generation process is not differentially private.
     - The privacy guarantees of the paper are not valid!

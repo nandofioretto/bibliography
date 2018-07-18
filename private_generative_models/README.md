@@ -17,13 +17,13 @@ Last update: Jun 16, 2018
 [Jump to Top](#_content) 
 
 
-#### Differentially Private Generative Adversarial Network
-<a name="Xie:18"></a>
-[[Paper]](https://arxiv.org/pdf/1802.06739.pdf)
+- Differentially Private Generative Adversarial Network
+    <a name="Xie:18"></a>
+    [[Paper]](https://arxiv.org/pdf/1802.06739.pdf)
 
-_Liyang Xie1, Kaixiang Lin1, Shu Wang2, Fei Wang3, Jiayu Zhou1 (CCS 2018)_
+    _Liyang Xie1, Kaixiang Lin1, Shu Wang2, Fei Wang3, Jiayu Zhou1 (CCS 2018)_
 
->_Generative Adversarial Network (GAN) and its variants have recently attracted intensive research interests due to their elegant theoretical foundation and excellent empirical performance as generative models. These tools provide a promising direction in the studies where data availability is limited. One common issue in GANs is that the density of the learned generative distribution could concentrate on the training data points, meaning that they can easily remember training samples due to the high model complexity of deep networks. This becomes a major concern when GANs are applied to private or sensitive data such as patient medical records, and the concentration of distribution may divulge critical patient information. To address this issue, in this paper we propose a differentially private GAN (DPGAN) model, in which we achieve differential privacy in GANs by adding carefully designed noise to gradients during the learning procedure. We provide rigorous proof for the privacy guarantee, as well as comprehensive empirical evidence to support our analysis, where we demonstrate that our method can generate high quality data points at a reasonable privacy level._
+    >_Generative Adversarial Network (GAN) and its variants have recently attracted intensive research interests due to their elegant theoretical foundation and excellent empirical performance as generative models. These tools provide a promising direction in the studies where data availability is limited. One common issue in GANs is that the density of the learned generative distribution could concentrate on the training data points, meaning that they can easily remember training samples due to the high model complexity of deep networks. This becomes a major concern when GANs are applied to private or sensitive data such as patient medical records, and the concentration of distribution may divulge critical patient information. To address this issue, in this paper we propose a differentially private GAN (DPGAN) model, in which we achieve differential privacy in GANs by adding carefully designed noise to gradients during the learning procedure. We provide rigorous proof for the privacy guarantee, as well as comprehensive empirical evidence to support our analysis, where we demonstrate that our method can generate high quality data points at a reasonable privacy level._
 
     [Comments]:
     - This paper was submitted to CCS-18 and seem to be rejected.

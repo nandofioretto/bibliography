@@ -17,7 +17,7 @@ Last update: Jun 16, 2018
 [Jump to Top](#_content) 
 
 
-- Differentially Private Generative Adversarial Network
+#### Differentially Private Generative Adversarial Network
     <a name="Xie:18"></a>
     [[Paper]](https://arxiv.org/pdf/1802.06739.pdf)
 

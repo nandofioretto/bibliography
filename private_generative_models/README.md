@@ -16,6 +16,19 @@ Last update: Jun 16, 2018
 
 [Jump to Top](#_content) 
 
+
+- Differentially Private Generative Adversarial Network
+    <a name="Xie:18"></a>
+    [[Paper]](https://arxiv.org/pdf/1802.06739.pdf)
+
+    _Liyang Xie1, Kaixiang Lin1, Shu Wang2, Fei Wang3, Jiayu Zhou1 (CCS 2018)_
+
+    _Generative Adversarial Network (GAN) and its variants have recently attracted intensive research interests due to their elegant theoretical foundation and excellent empirical performance as generative models. These tools provide a promising direction in the studies where data availability is limited. One common issue in GANs is that the density of the learned generative distribution could concentrate on the training data points, meaning that they can easily remember training samples due to the high model complexity of deep networks. This becomes a major concern when GANs are applied to private or sensitive data such as patient medical records, and the concentration of distribution may divulge critical patient information. To address this issue, in this paper we propose a differentially private GAN (DPGAN) model, in which we achieve differential privacy in GANs by adding carefully designed noise to gradients during the learning procedure. We provide rigorous proof for the privacy guarantee, as well as comprehensive empirical evidence to support our analysis, where we demonstrate that our method can generate high quality data points at a reasonable privacy level._
+
+    >[Comments]:
+    - This paper was submitted to CCS-18 and seem to be rejected.
+    - Need to check its privacy guarantees.
+
 - Differentially Private Releasing via Deep Generative Model
     <a name='Zhang:18'></a>
     [[Paper]](https://arxiv.org/abs/1801.01594)
@@ -33,6 +46,8 @@ Last update: Jun 16, 2018
     
     >_Preserving the utility of published datasets while simultaneously providing provable privacy guarantees is a well-known challenge. On the one hand, context-free privacy solutions, such as differential privacy, provide strong privacy guarantees, but often lead to a significant reduction in utility. On the other hand, context-aware privacy solutions, such as information theoretic privacy, achieve an improved privacy-utility tradeoff, but assume that the data holder has access to dataset statistics. We circumvent these limitations by introducing a novel context-aware privacy framework called generative adversarial privacy (GAP). GAP leverages recent advancements in generative adversarial networks (GANs) to allow the data holder to learn privatization schemes from the dataset itself. Under GAP, learning the privacy mechanism is formulated as a constrained minimax game between two players: a privatizer that sanitizes the dataset in a way that limits the risk of inference attacks on the individuals' private variables, and an adversary that tries to infer the private variables from the sanitized dataset. To evaluate GAP's performance, we investigate two simple (yet canonical) statistical dataset models: (a) the binary data model, and (b) the binary Gaussian mixture model. For both models, we derive game-theoretically optimal minimax privacy mechanisms, and show that the privacy mechanisms learned from data (in a generative adversarial fashion) match the theoretically optimal ones. This demonstrates that our framework can be easily applied in practice, even in the absence of dataset statistics._
 
+    >Note: This is a very interesting paper showcasing the use of MI for protecting private attributes.
+
 
 - Differentially Private Generative Adversarial Network
     <a name='Xie:18'></a>   
@@ -49,8 +64,10 @@ Last update: Jun 16, 2018
 
     _A Triastcyn, B Faltings (ArXiv-2018)_
 
-    >Note: This is a rejected paper from ICLR 2018
-           A new version was just (Jun, 4, 2018) deposited to the ArXiv. It seems that there was an error with the generation process and thus the whole data-generation process is not differentially private.
+    >[Comments]:
+    - This is a rejected paper from ICLR 2018.
+    - A new version was just (Jun, 4, 2018) deposited to the ArXiv. It seems that there was an error with the generation process and thus the whole data-generation process is not differentially private.
+    - The privacy guarantees of the paper are not valid!
 
 - Differentially Private Mixture of Generative Neural Networks
     <a name='Acs:17'></a>

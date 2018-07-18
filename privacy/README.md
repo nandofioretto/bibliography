@@ -30,6 +30,7 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	+ [Decision Trees](#_decision_trees)
 	+ [Generative Adversarial Networks](#_generative_adversarial_models)
 	+ [Regression](#_regression)
+	+ [Distributed Learning](#_distributed_learning)
 
 - [Distributed Differential Privacy](#_distributed_dp)
 
@@ -39,6 +40,10 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	+ [Pan Privacy](#_pan_privacy)
 	+ [Reni Differential Privacy](#)
 	+ [Random Differential Privacy](#)
+
+- [Privacy for Media Types](#_media_dp)
+
+
 
 - [Unclassified](#_unclassified)
 
@@ -464,6 +469,44 @@ This repo serves the purpose of organizing papers on Differential Privacy
 	_Qilong Han,Dan Lu, Kejia Zhang, Xiaojiang Du, Mohsen Guizani (ArXiv 2018)_
 
 	>_In recent years, with the continuous development of significant data industrialization, trajectory data have more and more critical analytical value for urban construction and environmental monitoring. However, the trajectory contains a lot of personal privacy, and rashly publishing trajectory data set will cause serious privacy leakage risk. At present, the privacy protection of trajectory data mainly uses the methods of data anonymity and generalization, without considering the background knowledge of attackers and ignores the risk of adjacent location points may leak sensitive location points. In this paper, based on the above problems, combined with the location correlation of trajectory data, we proposed a plausible replacement method. Firstly, the correlation of trajectory points is proposed to classify the individual trajectories containing sensitive points. Then, according to the relevance of location points and the randomized response mechanism, a reasonable candidate set is selected to replace the sensitive points in the trajectory to satisfy the local differential privacy. Theoretical and experimental results show that the proposed method not only protects the sensitive information of individuals, but also does not affect the overall data distribution_
+
+- Privacy-Preserving Vehicle Assignment for Mobility-on-Demand Systems
+	<a name='Prorok:17'></a>
+	[[Paper]](https://arxiv.org/pdf/1703.04738.pdf)
+
+	_Amanda Prorok, Vijay Kumar (ArXiv 2017)_
+
+    >_Urban transportation is being transformed by
+	mobility-on-demand (MoD) systems. One of the goals of MoD
+	systems is to provide personalized transportation services to
+	passengers. This process is facilitated by a centralized operator
+	that coordinates the assignment of vehicles to individual passengers,
+	based on location data. However, current approaches
+	assume that accurate positioning information for passengers
+	and vehicles is readily available. This assumption raises privacy
+	concerns. In this work, we address this issue by proposing a
+	method that protects passengers’ drop-off locations (i.e., their
+	travel destinations). Formally, we solve a batch assignment
+	problem that routes vehicles at obfuscated origin locations
+	to passenger locations (since origin locations correspond to
+	previous drop-off locations), such that the mean waiting time
+	is minimized. Our main contributions are two-fold. First,
+	we formalize the notion of privacy for continuous vehicleto-passenger
+	assignment in MoD systems, and integrate a
+	privacy mechanism that provides formal guarantees. Second, we
+	present a scalable algorithm that takes advantage of superfluous
+	(idle) vehicles in the system, combining multiple iterations of
+	the Hungarian algorithm to allocate a redundant number of
+	vehicles to a single passenger. As a result, we are able to
+	reduce the performance deterioration induced by the privacy
+	mechanism. We evaluate our methods on a real, large-scale
+	data set consisting of over 11 million taxi rides (specifying
+	vehicle availability and passenger requests), recorded over a
+	month’s duration, in the area of Manhattan, New York. Our
+	work demonstrates that privacy can be integrated into MoD
+	systems without incurring a significant loss of performance,
+	and moreover, that this loss can be further minimized at the
+	cost of deploying additional (redundant) vehicles into the fleet._
 
 
 
@@ -900,6 +943,24 @@ mining
 
 	>_Adversarial examples in machine learning has been a topic of intense research interest, with attacks and defenses being developed in a tight back-and-forth. Most past defenses are best-effort, heuristic approaches that have all been shown to be vulnerable to sophisticated attacks. More recently, rigorous defenses that provide formal guarantees have emerged, but are hard to scale or generalize. A rigorous and general foundation for designing defenses is required to get us off this arms race trajectory. We propose leveraging differential privacy (DP) as a formal building block for robustness against adversarial examples. We observe that the semantic of DP is closely aligned with the formal definition of robustness to adversarial examples. We propose PixelDP, a strategy for learning robust deep neural networks based on formal DP guarantees. PixelDP networks give theoretical guarantees for a subset of their predictions regarding the robustness against adversarial perturbations of bounded size. Our evaluation with MNIST, CIFAR-10, and CIFAR-100 shows that PixelDP networks achieve accuracy under attack on par with the best-performing defense to date, but additionally certify robustness against meaningful-size 1-norm and 2-norm attacks for 40-60% of their predictions. Our experience points to DP as a rigorous, broadly applicable, and mechanism-rich foundation for robust machine learning._
 
+### Distributed Learning
+<a name='_distributed_learning'></a>
+
+- Gossip Gradient Descent
+	[[Paper]](https://dl.acm.org/citation.cfm?id=3238049)
+
+	_Yang Liu,Ji Liu, Tamer Basar (AAMAS 2018 - extended abstract)_
+
+	>_We consider a problem of learning a linear regression model distributively with a network of N interconnected agents which receive private streaming data. Each agent can deploy an online learning algorithm, e.g. stochastic gradient descent, to learn adaptively the regression model using its receiving private data. The goal is to devise an algorithm for each agent, under the constraint that each of them can communicate only with its neighboring agents based on a communication graph, to enable each agent converge to the true model with a performance comparable to that of the traditional centralized solution. We propose an algorithm called gossip gradient descent, and establish O (√ log t over(1-λ 2 ) Nt ) convergence in expectation and mean square, where λ 2 is the second largest eigenvalue of the expected gossip matrix corresponding to the underlying communication graph. For the case when agents are privacy sensitive, we propose a differentially private variant of the algorithm, which achieves ε-differential privacy and O ł(√ over log 2 t ε(1-λ 2 ) Nt ) convergence._
+
+
+- Differentially-Private “Draw and Discard” Machine Learning
+
+	>_Vasyl Pihur, Aleksandra Korolova, Frederick Liu, Subhash Sankuratripati, Moti Yung, Dachuan Huang, Ruogu Zeng (ArXiv 2018_
+
+	>_In this work, we propose a novel framework for privacy-preserving client-distributed machine learning. It is motivated by the desire to achieve differential privacy guarantees in the local model of privacy in a way that satisfies all systems constraints using asynchronous client-server communication and provides attractive model learning properties. We call it "Draw and Discard" because it relies on random sampling of models for load distribution (scalability), which also provides additional server-side privacy protections and improved model quality through averaging. We present the mechanics of client and server components of "Draw and Discard" and demonstrate how the framework can be applied to learning Generalized Linear models. We then analyze the privacy guarantees provided by our approach against several types of adversaries and showcase experimental results that provide evidence for the framework's viability in practical deployments._
+
+	>[Comments] Talked at the Workshop on Privacy and Machine Learning at ICML '18. Interesting idea for large scale multi-agent deployment. Also, interesting that variance does not blow up!
 
 
 ## Distributed Differential Privacy
@@ -911,7 +972,7 @@ mining
 
 	_Cynthia Dwork, Krishnaram Kenthapadi, Frank McSherry, Ilya Mironov, Moni Naor (Eurocrypt 2006)_
 
-	>_. In this work we provide efficient distributed protocols for generating shares of random noise, secure against malicious participants. The purpose of the noise generation is to create a distributed implementation of the privacy-preserving statistical databases described in recent papers [14, 4, 13]. In these databases, privacy is obtained by perturbing the true answer to a database query by the addition of a small amount of Gaussian or exponentially distributed random noise. The computational power of even a simple form of these databases, when the query is just of the form \Sum_i f(di), that is, the sum over all rows i in the database of a function f applied to the data in row i, has been demonstrated in [4]. A distributed implementation eliminates the need for a trusted database administrator. The results for noise generation are of independent interest. The generation of Gaussian noise introduces a technique for distributing shares of many unbiased coins with fewer executions of verifiable secret sharing than would be needed using previous approaches (reduced by a factor of n). The generation of exponentially distributed noise uses two shallow circuits: one for generating many arbitrarily but identically biased coins at an amortized cost of two unbiased random bits apiece, independent of the bias, and the other to combine bits of appropriate biases to obtain an exponential distribution._
+	>In this work we provide efficient distributed protocols for generating shares of random noise, secure against malicious participants. The purpose of the noise generation is to create a distributed implementation of the privacy-preserving statistical databases described in recent papers [14, 4, 13]. In these databases, privacy is obtained by perturbing the true answer to a database query by the addition of a small amount of Gaussian or exponentially distributed random noise. The computational power of even a simple form of these databases, when the query is just of the form \Sum_i f(di), that is, the sum over all rows i in the database of a function f applied to the data in row i, has been demonstrated in [4]. A distributed implementation eliminates the need for a trusted database administrator. The results for noise generation are of independent interest. The generation of Gaussian noise introduces a technique for distributing shares of many unbiased coins with fewer executions of verifiable secret sharing than would be needed using previous approaches (reduced by a factor of n). The generation of exponentially distributed noise uses two shallow circuits: one for generating many arbitrarily but identically biased coins at an amortized cost of two unbiased random bits apiece, independent of the bias, and the other to combine bits of appropriate biases to obtain an exponential distribution._
 
 
 ## Differential Privacy Model Extensions
@@ -1000,17 +1061,29 @@ mining
 	This bound is optimal up to poly-logarithmic factors, as demonstrated by the [Private Multiplicative Weights algorithm](#hardt:10). In particular, our lower bound is the first to show that the sample complexity required for accuracy and (ε,δ)-differential privacy is asymptotically larger than what is required merely for accuracy, which is O(log|Q|/\alpha^2). In addition, we show that our lower bound holds for the specific case of k-way marginal queries (where |Q|=2^k \binomial(d, k)) when \alpha is not too small compared to d (e.g. when α is any fixed constant).  Our results rely on the existence of short \emph{fingerprinting codes} (Boneh and Shaw, CRYPTO'95, Tardos, STOC'03), which we show are closely connected to the sample complexity of differentially private data release. We also give a new method for combining certain types of sample complexity lower bounds into stronger lower bounds._
 
 
+## Privacy for Media Types
+<a name='_media_dp'></a>
+
+[Jump to Top](#_content)
+
+- Processing Text for Privacy: An Information Flow Perspective
+
+	<a name=":08"></a>
+	[[Paper]](http://web.cs.ucdavis.edu/~franklin/ecs289/2010/dwork_2008.pdf)
+
+	_Natasha FernandesMark DrasAnnabelle McIverEmail author (Formal Methods 2018)_
+
+
 ## Unclassified
 <a name='_unclassified'></a>
 
 - Reversible Data Perturbation Techniques for Multi-level Privacy-preserving Data Publication
 	<a name='L1:18'></a>
-	[[Paper]](http://d-scholarship.pitt.edu/34503/1/camera_ready_paper.pdf)
+	[[Paper]](https://link.springer.com/chapter/10.1007/978-3-319-95582-7_1)
 
 	_Chao Li, Balaji Palanisamy, Prashant Krishnamurthy 2018_
 
-	>[Comments]: Miscellaneous.
-
-	>_The amount of digital data generated in the Big Data age is increasingly rapidly. Privacy-preserving data publishing techniques based on differential privacy through data perturbation provide a safe release of datasets such that sensitive information present in the dataset cannot be inferred from the published data. Existing privacy-preserving data publishing solutions have focused on publishing a single snapshot of the data with the assumption that all users of the data share the same level of privilege and access the data with a fixed privacy level. Thus, such schemes do not directly support data release in cases when data users have different levels of access on the published data. While a straightforward approach of releasing a separate snapshot of the data for each possible data access level can allow multi-level access, it can result in a higher storage cost requiring separate storage space for each instance of the published data. In this paper, we develop a set of reversible data perturbation techniques for large bipartite association graphs that use perturbation keys to control the sequential generation of multiple snapshots of the data to offer multi-level access based on privacy levels. The proposed schemes enable multi-level data privacy, allowing selective deperturbation of the published data when suitable access credentials are provided. We evaluate the techniques through extensive experiments on a large real-world association graph dataset and our experiments show that the proposed techniques are efficient, scalable and effectively support multi-level data privacy on the published data._
+	>_The problem of text document obfuscation is to provide an automated mechanism which is able to make accessible the content of a text document without revealing the identity of its writer. This is more challenging than it seems, because an adversary equipped with powerful machine learning mechanisms is able to identify authorship (with good accuracy) where, for example, the name of the author has been redacted. Current obfuscation methods are ad hoc and have been shown to provide weak protection against such adversaries. Differential privacy, which is able to provide strong guarantees of privacy in some domains, has been thought not to be applicable to text processing.
+	In this paper we will review obfuscation as a quantitative information flow problem and explain how generalised differential privacy can be applied to this problem to provide strong anonymisation guarantees in a standard model for text processing._
 
 

@@ -29,7 +29,7 @@ Last update: Jun 16, 2018
     - This paper was submitted to CCS-18 and seem to be rejected.
     - Need to check its privacy guarantees.
 
-- Differentially Private Releasing via Deep Generative Model
+- Differentially Private Releasing via Deep Generative Model (Technical Report)
     <a name='Zhang:18'></a>
     [[Paper]](https://arxiv.org/abs/1801.01594)
 
@@ -49,8 +49,6 @@ Last update: Jun 16, 2018
     [Comments]: 
     - This is a very interesting paper showcasing the use of MI for protecting private attributes.
 
-
-
 - Generating Differentially Private Datasets Using GANs
     <a name='Triastcyn:18'></a>
     [[Paper]](https://openreview.net/forum?id=rJv4XWZA-&noteId=BynjVJaSG)
@@ -63,6 +61,15 @@ Last update: Jun 16, 2018
     - This is a rejected paper from ICLR 2018.
     - A new version was just (Jun, 4, 2018) deposited to the ArXiv. It seems that there was an error with the generation process and thus the whole data-generation process is not differentially private.
     - The privacy guarantees of the paper are not valid!
+
+- Privacy-Preserving Adversarial Networks
+    <a name='Tripathy:17'></a>
+    [[Paper]](https://arxiv.org/abs/1712.07008)
+
+    _Ardhendu Tripathy, Ye Wang, Prakash Ishwar (ArXiv 2017)_
+
+    >_We propose a data-driven framework for optimizing privacy-preserving data release mechanisms toward the information-theoretically optimal tradeoff between minimizing distortion of useful data and concealing sensitive information. Our approach employs adversarially-trained neural networks to implement randomized mechanisms and to perform a variational approximation of mutual information privacy. We empirically validate our Privacy-Preserving Adversarial Networks (PPAN) framework with experiments conducted on discrete and continuous synthetic data, as well as the MNIST handwritten digits dataset. With the synthetic data, we find that our model-agnostic PPAN approach achieves tradeoff points very close to the optimal tradeoffs that are analytically-derived from model knowledge. In experiments with the MNIST data, we visually demonstrate a learned tradeoff between minimizing the pixel-level distortion versus concealing the written digit._
+
 
 - Differentially Private Mixture of Generative Neural Networks
     <a name='Acs:17'></a>

@@ -109,6 +109,9 @@ Last update: Jun 16, 2018
 
 
 ## Other resources
+### GitHub Links
+- [DP-GAN](https://github.com/alps-lab/dpgan)
+
 
 ### Tutorials 
 

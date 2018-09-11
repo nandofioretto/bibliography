@@ -17,6 +17,14 @@ Last update: Jun 16, 2018
 [Jump to Top](#_content) 
 
 
+- Learning Sensitive Images Using Generative Models
+    <a name=""></a>
+    [[Paper]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8451239)
+    
+    _ Sen-Ching Samson Cheung,  Herb Wildfeuer,  Mehdi Nikkhah,  Xiaoqing Zhu,  Waitian Tan (ICIP 2018)_
+    
+    >_The sheer amount of personal data being transmitted to cloud services and the ubiquity of cellphones cameras and various sensors, have provoked a privacy concern among many people. On the other hand, the recent phenomenal growth of deep learning that brings advancements in almost every aspect of human life is heavily dependent on the access to data, including sensitive images, medical records, etc. Therefore, there is a need for a mechanism that transforms sensitive data in such a way as to preserves the privacy of individuals, yet still be useful for deep learning algorithms. This paper proposes the use of Generative Adversarial Networks (GANs) as one such mechanism, and through experimental results, shows its efficacy._
+
 - Differentially Private Generative Adversarial Network
     <a name="Xie:18"></a>
     [[Paper]](https://arxiv.org/pdf/1802.06739.pdf)

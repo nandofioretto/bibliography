@@ -43,6 +43,8 @@ This repo serves the purpose of organizing papers on Differential Privacy
 
 - [Privacy for Media Types](#_media_dp)
 
+- [Applications](#_dp_applications)
+	+ [Energy Networks](#_dp_energy)
 
 
 - [Unclassified](#_unclassified)
@@ -1087,3 +1089,66 @@ mining
 	In this paper we will review obfuscation as a quantitative information flow problem and explain how generalised differential privacy can be applied to this problem to provide strong anonymisation guarantees in a standard model for text processing._
 
 
+--- 
+
+<!-- Application of Differential Privacy -->
+
+## Applications
+<a name='_dp_applications'></a>
+
+[Jump to Top](#_content)
+
+<!-- Application of Differential Privacy to Energy Problems -->
+### Energy Networks
+<a name="_dp_energy"></a>
+
+[Jump to Top](#_content)
+
+- Di-PriDA: Differentially Private Distributed Load Balancing Control for the Smart Grid
+	<a name="Liao:17"></a> 
+
+	_Xiaojing Liao, Preethi Srinivasan, David Formby, A. Raheem Beyah (IEEE Trans. on Dependable and Secure Computing (2017)_
+
+	>_The future electrical grid, i.e., smart grid, is envisioned to use appliance-level control to provide sustainable power usage and flexible energy utilization. However, load trace monitoring for appliance-level control poses privacy concerns given that private behaviors can be inferred by electricity utilization levels. In this paper, we introduce a privacy-preserving and fine-grained power load data analysis mechanism Di-PriDA for appliance-level peak-time load balancing control in the smart grid. Di-PriDA achieved 3epsilon-differential privacy, which provided indistinguishable application power consumption data to protect against eavesdroppers. The proposed technique explores a new differential privacy problem: the distributed top-k problem without a trusted third party, and provides both rigorous provable privacy and an accuracy guarantee based on distributed differential privacy. We implement a prototype of Di-PriDA on an external microcontroller device used for smart meters, and evaluate its performance under two real-world power usage datasets, as well as a synthetic dataset through a combination of experiments and simulations. We find that Di-PriDA effectively achieves confidentiality for the appliance-level peak-time load balancing control while guaranteeing a good quality-of-service to the various stakeholders of the power grid._
+	
+	>Note: Smart Meters
+
+- Assessing the Privacy Cost in Centralized Event-Based Demand Response for Microgrids
+	<a name='Karapetyan:17'></a>
+	[[Paper]](https://arxiv.org/abs/1703.02382)
+
+	_Areg Karapetyan, Syafiq Kamarul Azman, Zeyar Aung (ArXiv 2018)_
+
+	>_Demand response (DR) programs have emerged as a potential key enabling ingredient in the context of smart grid (SG). Nevertheless, the rising concerns over privacy issues raised by customers subscribed to these programs constitute a major threat towards their effective deployment and utilization. This has driven extensive research to resolve the hindrance confronted, resulting in a number of methods being proposed for preserving customers' privacy. While these methods provide stringent privacy guarantees, only limited attention has been paid to their computational efficiency and performance quality. Under the paradigm of differential privacy, this paper initiates a systematic empirical study on quantifying the trade-off between privacy and optimality in centralized DR systems for maximizing cumulative customer utility. Aiming to elucidate the factors governing this trade-off, we analyze the cost of privacy in terms of the effect incurred on the objective value of the DR optimization problem when applying the employed privacy-preserving strategy based on Laplace mechanism. The theoretical results derived from the analysis are complemented with empirical findings, corroborated extensively by simulations on a 4-bus MG system with up to thousands of customers. By evaluating the impact of privacy, this pilot study serves DR practitioners when considering the social and economic implications of deploying privacy-preserving DR programs in practice. Moreover, it stimulates further research on exploring more efficient approaches with bounded performance guarantees for optimizing energy procurement of MGs without infringing the privacy of customers on demand side._
+
+	>Note: Demand Response
+
+- Cost of differential privacy in demand reporting for smart grid economic dispatch
+	<a name="Lou:16"></a>
+	[[Paper]](http://publish.illinois.edu/cps-security/files/2016/12/dp-cost-techreport.pdf)
+
+  	_Xin Lou, Rui Tan, D Yau, Peng Cheng (Tech. Rep 2016)_
+
+  	>_Increasing dynamics of electrical loads presents uncertainty and hence new challenges for power grid controls and optimization. In economic dispatch control (EDC) for minimizing generation cost, demand reporting by customers is a promising approach for managing the uncertainty, but it raises important privacy concerns. Adding random noise to aggregate queries of demand reports can provide differential privacy (DP) for the individual customers. But the noisy query results can adversely impact the EDC’s optimality. In this paper, we analyze the privacy cost in demand reporting in terms of how DP-induced noise will increase the total generation cost. Our analysis shows that the noise amounts for different customers are intricately coupled with one another in determining the total cost. In view of the coupling, we apply the principle of Shapley value to attribute fair shares of the total cost to the power grid buses. For efficient sharing of the privacy cost, in a manner scalable to large power systems with many buses, we additionally propose heuristic algorithms to approximate the Shapley value. Trace- driven simulations based on a 5-bus power system model validate our analysis and illustrate the performance of the proposed cost sharing algorithms._
+
+	>Note: Energy Dispatch
+
+- Achieving differential privacy of data disclosure in the smart grid
+	<a name="Zhao:14">
+	[[Paper]](https://ieeexplore.ieee.org/document/6847974/authors#authors)
+
+	_Jing Zhao, Taeho Jung, Yu Wang, Xiangyang Li (IEEE Infocom 2014)_
+
+	>_The smart grid introduces new privacy implications to individuals and their family due to the fine-grained usage data collection. For example, smart metering data could reveal highly accurate real-time home appliance energy load, which may be used to infer the human activities inside the houses. One effective way to hide actual appliance loads from the outsiders is Battery-based Load Hiding (BLH), in which a battery is installed for each household and smartly controlled to store and supply power to the appliances. Even though such technique has been demonstrated useful and can prevent certain types of attacks, none of existing BLH works can provide probably privacy-preserving mechanisms. In this paper, we investigate the privacy of smart meters via differential privacy. We first analyze the current existing BLH methods and show that they cannot guarantee differential privacy in the BLH problem. We then propose a novel randomized BLH algorithm which successfully assures differential privacy, and further propose the Multitasking-BLH-Exp3 algorithm which adaptively updates the BLH algorithm based on the context and the constraints. Results from extensive simulations show the efficiency and effectiveness of the proposed method over existing BLH methods._
+
+	>Note: Smart Meters
+
+- I Have a DREAM!(DiffeRentially privatE smArt Metering
+	<a name="Acs:11">
+	[[Paper]](https://arxiv.org/abs/1201.2531)
+
+	_Gergely {\'A}cs, Claude Castelluccia (Information hiding 2011)_
+
+	>_This paper presents a new privacy-preserving smart metering system. Our scheme is private under the differential privacy model and therefore provides strong and provable guarantees. With our scheme, an (electricity) supplier can periodically collect data from smart meters and derive aggregated statistics while learning only limited information about the activities of individual households. For example, a supplier cannot tell from a user's trace when he watched TV or turned on heating. Our scheme is simple, efficient and practical. Processing cost is very limited: smart meters only have to add noise to their data and encrypt the results with an efficient stream cipher._
+
+	>Note: Smart Meters

@@ -1,28 +1,24 @@
 # Private Generative Models Bibliography
-Last update: Jun 16, 2018
-
+Last update: Dec 15, 2018
 
 ## Content
-<a name='_content'></a>
+<a name="content"></a>
 
-- [Private Generative Adverarial Networks](#_dp_gans)
+- [Private Generative Adversarial Networks](#dp_gans)
 
-- [Generative Model for Private Data Synthesis](#_dp_gen)
+- [Generative Model for Private Data Synthesis](#dp_gen)
 
+## Private Generative Adversarial Networks
+<a name='dp_gans'></a>
 
-
-## Private Generative Adverarial Networks
-<a name='_dp_gans'></a>
-
-[Jump to Top](#_content) 
-
+[Jump to Top](#content)
 
 - Learning Sensitive Images Using Generative Models
-    <a name=""></a>
+    <a name="Cheung:18"></a>
     [[Paper]](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8451239)
-    
+
     _ Sen-Ching Samson Cheung,  Herb Wildfeuer,  Mehdi Nikkhah,  Xiaoqing Zhu,  Waitian Tan (ICIP 2018)_
-    
+
     >_The sheer amount of personal data being transmitted to cloud services and the ubiquity of cellphones cameras and various sensors, have provoked a privacy concern among many people. On the other hand, the recent phenomenal growth of deep learning that brings advancements in almost every aspect of human life is heavily dependent on the access to data, including sensitive images, medical records, etc. Therefore, there is a need for a mechanism that transforms sensitive data in such a way as to preserves the privacy of individuals, yet still be useful for deep learning algorithms. This paper proposes the use of Generative Adversarial Networks (GANs) as one such mechanism, and through experimental results, shows its efficacy._
 
 - Differentially Private Generative Adversarial Network
@@ -51,10 +47,10 @@ Last update: Jun 16, 2018
     [[Paper]](https://arxiv.org/pdf/1710.09549.pdf)
 
     _Chong Huang, Peter Kairouz, Xiao Chen, Lalitha Sankar, Ram Rajagopal (Entropy 2018)_
-    
+
     >_Preserving the utility of published datasets while simultaneously providing provable privacy guarantees is a well-known challenge. On the one hand, context-free privacy solutions, such as differential privacy, provide strong privacy guarantees, but often lead to a significant reduction in utility. On the other hand, context-aware privacy solutions, such as information theoretic privacy, achieve an improved privacy-utility tradeoff, but assume that the data holder has access to dataset statistics. We circumvent these limitations by introducing a novel context-aware privacy framework called generative adversarial privacy (GAP). GAP leverages recent advancements in generative adversarial networks (GANs) to allow the data holder to learn privatization schemes from the dataset itself. Under GAP, learning the privacy mechanism is formulated as a constrained minimax game between two players: a privatizer that sanitizes the dataset in a way that limits the risk of inference attacks on the individuals' private variables, and an adversary that tries to infer the private variables from the sanitized dataset. To evaluate GAP's performance, we investigate two simple (yet canonical) statistical dataset models: (a) the binary data model, and (b) the binary Gaussian mixture model. For both models, we derive game-theoretically optimal minimax privacy mechanisms, and show that the privacy mechanisms learned from data (in a generative adversarial fashion) match the theoretically optimal ones. This demonstrates that our framework can be easily applied in practice, even in the absence of dataset statistics._
 
-    [Comments]: 
+    [Comments]:
     - This is a very interesting paper showcasing the use of MI for protecting private attributes.
 
 - Generating Differentially Private Datasets Using GANs
@@ -62,7 +58,7 @@ Last update: Jun 16, 2018
     [[Paper]](https://openreview.net/forum?id=rJv4XWZA-&noteId=BynjVJaSG)
 
     _A Triastcyn, B Faltings (ArXiv-2018)_
-    
+
     >_In this paper, we present a technique for generating artificial datasets that retain statistical properties of the real data while providing differential privacy guarantees with respect to this data. We include a Gaussian noise layer in the discriminator of a generative adversarial network to make the output and the gradients differentially private with respect to the training data, and then use the generator component to synthesise privacy-preserving artificial dataset. Our experiments show that under a reasonably small privacy budget we are able to generate data of high quality and successfully train machine learning models on this artificial data._
 
     [Comments]:
@@ -90,9 +86,9 @@ Last update: Jun 16, 2018
 
 
 ## Generative Model for Private Data Synthesis
-<a name='_dp_gen'></a>
+<a name='dp_gen'></a>
 
-[Jump to Top](#_content)
+[Jump to Top](#content)
 
 - Plausible Deniability for Privacy-Preserving Data Synthesis
     <a name='Bindschaedler:17'></a>
@@ -101,17 +97,20 @@ Last update: Jun 16, 2018
     _Vincent Bindschaedler, Reza Shokri, Carl A. Gunter (VLDB 2017)_
 
     >_Releasing full data records is one of the most challenging problems in data privacy. On the one hand, many of the popular techniques such as data de-identification are proble- matic because of their dependence on the background knowledge of adversaries. On the other hand, rigorous methods such as the exponential mechanism for differential privacy are often computationally impractical to use for releasing high dimensional data or cannot preserve high utility of original data due to their extensive data perturbation._
-    
+
     >_This paper presents a criterion called plausible deniability that provides a formal privacy guarantee, notably for releasing sensitive datasets: an output record can be released only if a certain amount of input records are indistinguishable, up to a privacy parameter. This notion does not depend on the background knowledge of an adversary. Also, it can efficiently be checked by privacy tests. We present mechanisms to generate synthetic datasets with similar statistical properties to the input data and the same format. We study this technique both theoretically and experimentally. A key theoretical result shows that, with proper randomization, the plausible deniability mechanism generates differentially private synthetic data. We demonstrate the efficiency of this generative technique on a large dataset; it is shown to preserve the utility of original data with respect to various statistical analysis and machine learning measures._
 
 - Coupling Random Orthonormal Projection with Gaussian Generative Model for Non-Interactive Private Data Release
     <a name='Chanyaswad:18'></a>
     [[Paper]](https://arxiv.org/pdf/1709.00054.pdf)
+    [[Paper]](https://petsymposium.org/2019/files/papers/issue1/popets-2019-0003.pdf)
     [[Code]](https://github.com/inspire-group/RON-Gauss)
 
     _Thee Chanyaswad, Changchang Liu, Prateek Mittal (ArXiv 2018)_
 
     >_A key challenge facing the design of differential privacy in the non-interactive setting is to maintain the utility of the released data. To overcome this challenge, we utilize the Diaconis-Freedman-Meckes (DFM) effect, which states that most projections of high-dimensional data are nearly Gaussian. Hence, we propose the RON-Gauss model that leverages the novel combination of dimensionality reduction via random orthonormal (RON) projection and the Gaussian generative model for synthesizing differentially-private data. We analyze how RON-Gauss benefits from the DFM effect, and present multiple algorithms for a range of machine learning applications, including both unsupervised and supervised learning. Furthermore, we rigorously prove that (a) our algorithms satisfy the strong ϵ-differential privacy guarantee, and (b) RON projection can lower the level of perturbation required for differential privacy. Finally, we illustrate the effectiveness of RON-Gauss under three common machine learning applications -- clustering, classification, and regression -- on three large real-world datasets. Our empirical results show that (a) RON-Gauss outperforms previous approaches by up to an order of magnitude, and (b) loss in utility compared to the non-private real data is small. Thus, RON-Gauss can serve as a key enabler for real-world deployment of privacy-preserving data release._
+
+    > Note: New name: "RON-Gauss: Enhancing Utility in Non-Interactive Private Data Release"
 
 
 
@@ -121,9 +120,8 @@ Last update: Jun 16, 2018
 - [DP-GAN](https://github.com/alps-lab/dpgan)
 
 
-### Tutorials 
+### Tutorials
 
 ### Slides
 
 ### Media-articles
-
